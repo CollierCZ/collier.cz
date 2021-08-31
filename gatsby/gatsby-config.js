@@ -17,9 +17,16 @@ module.exports = {
     title: "My super blog",
     description: "Gatsby blog with Strapi",
     author: "Strapi team",
+    siteUrl: "https://www.master-7rqtwti-xb3pfo7wqxbeg.eu-3.platformsh.site",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [{ userAgent: '*', allow: '/', crawlDelay: 10 }]
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
