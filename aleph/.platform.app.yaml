@@ -1,0 +1,28 @@
+# .platform.app.yaml
+
+# The name of this application, which must be unique within a project.
+name: aleph
+
+# The type key specifies the language and version for your application.
+type: 'golang:1.17'
+
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    build: |
+      curl -fsSL https://deno.land/x/install/install.sh | sh
+      export PATH="/app/.deno/bin:$PATH"
+      deno run -A https://deno.land/x/aleph/install.ts
+      aleph build
+# The size of the persistent disk of the application (in MB).
+disk: 1024
+
+relationships:
+   strapi: "strapi:http"
+
+# The configuration of the application when it is exposed to the web.
+web:
+    locations:
+        '/':
+            # The public directory of the application relative to its root.
+            root: 'dist'
+            index: ['index.html']

@@ -19,3 +19,7 @@
     type: redirect
     id: 'strapi'
     to: "https://www.backend.{default}/"
+
+"https://aleph.{default}/":
+    type: upstream
+    upstream: "aleph:http"
