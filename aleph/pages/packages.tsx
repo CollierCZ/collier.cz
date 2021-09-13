@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'https://esm.sh/react'
-import { useDeno } from "https://deno.land/x/aleph/framework/react/mod.ts"
+import React from 'https://esm.sh/react'
+import useStrapi from '~/lib/useStrapi.ts'
  
 interface Package {
     name: string;
@@ -7,19 +7,8 @@ interface Package {
     github: string;
     stars: number;
   }
-  
-  interface Props {
-    packages: Package[];
-  }
-
   const Packages = () => {
-    const packages = useDeno(async () => {
-        const STRAPI_API_URL = Deno.env.get('STRAPI_URL') ||
-          "http://localhost:1337";
-    const url = `${STRAPI_API_URL}/packages`;
-        return await (await fetch(url)
-          .then(response => response.json()))
-      })
+    const packages = useStrapi("packages")
     return (
         <div className="container">
           <h1>Hello, World!</h1>
