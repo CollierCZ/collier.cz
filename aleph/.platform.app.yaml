@@ -8,7 +8,7 @@ type: 'golang:1.17'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
-    build: |
+    post_deploy: |
       curl -fsSL https://deno.land/x/install/install.sh | sh
       export PATH="/app/.deno/bin:$PATH"
       deno run -A https://deno.land/x/aleph/install.ts
@@ -26,3 +26,17 @@ web:
             # The public directory of the application relative to its root.
             root: 'dist'
             index: ['index.html']
+
+mounts:
+  '/.cache':
+      source: local
+      source_path: cache
+  '/.deno':
+      source: local
+      source_path: deno
+  '/.aleph':
+      source: local
+      source_path: aleph
+  'dist':
+      source: local
+      source_path: dist
