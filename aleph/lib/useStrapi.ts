@@ -2,10 +2,19 @@ import { useDeno } from "https://deno.land/x/aleph/framework/react/mod.ts"
 
 const useStrapi = (endpoint: String) => {
   return useDeno(async () => {
-    const relationships = JSON.parse(atob(Deno.env.get('PLATFORM_RELATIONSHIPS')))
-    const strapi = relationships.strapi[0]
-    const STRAPI_API_URL = `http://${strapi.ip}:${strapi.port}`;
-    const url = `${STRAPI_API_URL}/${endpoint}`;
+    const relationships = Deno.env.get('PLATFORM_RELATIONSHIPS')
+    const getUrl = () => {
+      if (relationships) {
+        const parsedRelationships = JSON.parse(atob(relationships))
+        const strapi = parsedRelationships.strapi[0]
+        return`http://${strapi.ip}:${strapi.port}`
+      }
+      else {
+        return Deno.env.get('STRAPI_URL')
+      }
+    }
+    const strapiUrl = getUrl()
+    const url = `${strapiUrl}/${endpoint}`;
     return await (await fetch(url).then(response => response.json()))
   })
 }
