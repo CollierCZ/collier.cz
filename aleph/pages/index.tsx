@@ -16,7 +16,7 @@ export default function Home() {
       <p className="logo"><Logo /></p>
       <h1>Welcome to use <strong>Aleph.js</strong>!</h1>
       <p className="links">
-        <a href="/packages">See all packages</a>
+        <a href="/packages/">See all packages</a>
         <span></span>
         <a href="https://alephjs.org/docs/get-started" target="_blank">Get Started</a>
         <span></span>
