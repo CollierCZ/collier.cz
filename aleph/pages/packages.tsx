@@ -10,20 +10,21 @@ interface Package {
   const Packages = () => {
     const packages = useStrapi("packages")
     return (
-        <div className="container">
-          <h1>Hello, World!</h1>
-          <table className="table">
+        <div className="w-screen h-screen flex items-center justify-center">
+          <h1 className="text-4x1 font-extrabold leading-relaxed">Hello, World!</h1>
+          <table>
             <thead>
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Stars</th>
-                <th scope="col">URL</th>
+                <th scope="col" className="bg-gray-400">Name</th>
+                <th scope="col" className="bg-gray-400">Description</th>
+                <th scope="col" className="bg-gray-400">Stars</th>
+                <th scope="col" className="bg-gray-400">URL</th>
               </tr>
-            </thead><tbody>
+            </thead>
+            <tbody>
               {packages.map((pkg: Package) => (
                 <tr key={pkg.name}>
-                  <th scope="row">{pkg.name}</th>
+                  <th scope="row" className="bg-gray-400">{pkg.name}</th>
                   <td>{pkg.description}</td>
                   <td>{pkg.stars}</td>
                   <td>
