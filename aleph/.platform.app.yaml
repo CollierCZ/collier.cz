@@ -9,10 +9,11 @@ type: 'golang:1.17'
 # The hooks that will be triggered when the package is deployed.
 hooks:
     post_deploy: |
-      curl -fsSL https://deno.land/x/install/install.sh | sh
-      export PATH="/app/.deno/bin:$PATH"
-      deno run -A https://deno.land/x/aleph/install.ts
-      aleph build
+        set -e
+        curl -fsSL https://deno.land/x/install/install.sh | sh
+        export PATH="/app/.deno/bin:$PATH"
+        deno run -A https://deno.land/x/aleph/install.ts
+        aleph build
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
