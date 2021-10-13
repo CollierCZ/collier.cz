@@ -1,41 +1,50 @@
-import { useDeno } from 'aleph/react'
-import React from 'react'
-import Logo from '~/components/logo.tsx'
-import useCounter from '~/lib/useCounter.ts'
-
-export default function Home() {
-  const [count, isSyncing, increase, decrease] = useCounter()
-  const version = useDeno(() => Deno.version.deno)
-
-  return (
+import React from 'https://esm.sh/react'
+import useStrapi from '~/lib/useStrapi.ts'
+ 
+interface Article {
+    title: string;
+    slug: string;
+    description: string;
+    published: Date;
+  }
+const Index = () => {
+    const articles = useStrapi("articles")
+    return (
     <div className="page">
       <head>
-        <title>Hello World - Aleph.js</title>
-        <link rel="stylesheet" href="../style/index.css" />
+        <title>Aaron Collier</title>
       </head>
-      <p className="logo"><Logo /></p>
-      <h1>Welcome to use <strong>Aleph.js</strong>!</h1>
-      <p className="links">
-        <a href="/packages/">See all packages</a>
-        <span></span>
-        <a href="https://alephjs.org/docs/get-started" target="_blank">Get Started</a>
-        <span></span>
-        <a href="https://alephjs.org/docs" target="_blank">Docs</a>
-        <span></span>
-        <a href="https://github.com/alephjs/aleph.js" target="_blank">Github</a>
-      </p>
-      <div className="counter">
-        <span>Counter:</span>
-        {isSyncing && (
-          <em>...</em>
-        )}
-        {!isSyncing && (
-          <strong>{count}</strong>
-        )}
-        <button onClick={decrease}>-</button>
-        <button onClick={increase}>+</button>
+      <div className="flex flex-row items-center justify-center my-8 h-48">
+        <div className="w-48">
+          <img src="avatar.png" />
+        </div>
+        <div className="w-128 pl-8">
+          <h1 className="text-5xl font-extrabold leading-relaxed pb-8">Aaron Collier</h1>
+          <p>Originally from Lexington and now residing in Brno, Aaron is an educator, editor, and elucidator. <a href="https://collier.cz/aaron-collier" className="underline hover:no-underline focus:no-underline">More about Aaron</a>.</p>
+        </div>
       </div>
-      <p className="copyinfo">Built by Aleph.js in Deno {version}</p>
+      <div className="flex justify-center py-8">
+        <div className="max-w-80ch">
+          {articles.map((article: Article, index) => {
+            const isLast = index >= articles.length - 1
+            const link = `/articles/${article.slug}`
+            return (
+              <React.Fragment key={article.slug}>
+                <article className="p-8">
+                  <h2 className="text-3xl mb-4"><a href={link} className="underline hover:no-underline focus:no-underline">{article.title}</a></h2>
+                  <p className="mb-2">
+                    <time dateTime={article.published}>{article.published}</time>
+                  </p>
+                  <p className="mb-2">{article.description}</p>
+                  <p className="mb-2"><a href={link} className="underline hover:no-underline focus:no-underline">Read more</a></p>
+                </article>
+                {!isLast && <hr />}
+              </React.Fragment>
+          )})}
+        </div>
+      </div>
     </div>
   )
 }
+
+export default Index;
