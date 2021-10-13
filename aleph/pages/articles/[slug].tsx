@@ -7,7 +7,6 @@ const Article = () => {
   const router = useRouter()
   const slug = router.params.slug
   const article = useStrapi(`articles?slug_eq=${slug}`)[0]
-  console.log(article)
   return (
     <div className="page">
       <head>
@@ -18,7 +17,6 @@ const Article = () => {
       <div className="flex justify-center py-8">
         <div className="max-w-80ch">
           {article?.body.map(item => {
-            console.log(item.__component === "body.text")
             if (item.__component === "body.text") return <div dangerouslySetInnerHTML={{ __html: marked.parse(item.content) }} />
             return ""
           })}

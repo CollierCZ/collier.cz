@@ -22,11 +22,14 @@ relationships:
 
 # The configuration of the application when it is exposed to the web.
 web:
+    commands:
+        start: aleph start
     locations:
         '/':
             # The public directory of the application relative to its root.
             root: 'dist'
             index: ['index.html']
+            passthru: true
 
 mounts:
   '/.cache':
