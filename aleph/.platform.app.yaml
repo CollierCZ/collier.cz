@@ -8,7 +8,7 @@ type: 'golang:1.17'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
-    post_deploy: |
+    build: |
         set -e
         curl -fsSL https://deno.land/x/install/install.sh | sh
         export PATH="/app/.deno/bin:$PATH"
