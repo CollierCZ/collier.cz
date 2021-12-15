@@ -1,29 +1,16 @@
-import marked from 'https://esm.sh/marked@3.0.4'
-import React from 'https://esm.sh/react'
 import { useRouter } from 'aleph/react'
-import useStrapi from '~/lib/useStrapi.ts'
- 
-const Article = () => {
+import React from 'react'
+
+import MdxThing from '../../components/MdxThing.tsx'
+
+export default async function Query() {
   const router = useRouter()
-  const slug = router.params.slug
-  const article = useStrapi(`articles?slug_eq=${slug}`)[0]
-  return (
-    <div className="page">
-      <head>
-        <title>{article?.title ? `${article.title} | ` : ""}Aaron Collier</title>
-      </head>
-      <div className="flex flex-row items-center justify-center my-8 h-48">
-      </div>
-      <div className="flex justify-center py-8">
-        <div className="max-w-80ch">
-          {article?.body.map(item => {
-            if (item.__component === "body.text") return <div dangerouslySetInnerHTML={{ __html: marked.parse(item.content) }} />
-            return ""
-          })}
-        </div>
-      </div>
-    </div>
+  const slug = router.params.slug || 'test'
+
+  const Mdx = await import(`../mdx/${slug}.md.js`)
+  .catch(err => console.error(err))
+
+  console.log(Mdx.default)
+  return ("hi"
   )
 }
-
-export default Article;
