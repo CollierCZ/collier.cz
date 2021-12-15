@@ -1,0 +1,15 @@
+# .platform.app.yaml
+
+# The name of this application, which must be unique within a project.
+name: svelte
+
+# The type key specifies the language and version for your application.
+type: 'nodejs:16'
+
+# The hooks that will be triggered when the package is deployed.
+hooks:
+    build: |
+        set -e
+        npm run build
+# The size of the persistent disk of the application (in MB).
+disk: 1024
