@@ -1,45 +1,12 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
-	import '../app.css';
+	import Header from '../components/Header.svelte';
+	import "virtual:windi.css"
 </script>
 
-<Header />
+<Header title="hi aaron" />
 
-<main>
-	<slot />
+<main class="flex justify-center pb-8 font-sans">
+	<div class="max-w-80ch prose-lg pt-8">
+		<slot />
+	</div>
 </main>
-
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
-
-<style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style>

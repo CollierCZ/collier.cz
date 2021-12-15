@@ -1,59 +1,37 @@
 <script context="module" lang="ts">
 	export const prerender = true;
+	export async function load({ fetch }) {
+		const url = '/articles.json';
+		const res = await fetch(url);
+
+    return {
+      props: {
+        articles: await res.json()
+      }
+    };
+	}
 </script>
 
-<script lang="ts">
-	import Counter from '$lib/Counter.svelte';
+
+<script>
+	/** @type {array} */
+	export let articles;
+
+  import ArticleCard from "../components/ArticleCard.svelte"
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
+<aside class="flex flex-row items-center justify-center my-8 h-48">
+	<div class="w-48">
+		<img alt="" src="/avatar.png" />
+	</div>
+	<div class="w-128 pl-8 prose-lg">
+		<h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
+		<p>Originally from Lexington and now residing in Brno, Aaron is an educator, editor, and elucidator. <a href="https://collier.cz/aaron-collier" class="underline hover:no-underline focus:no-underline">More about Aaron</a>.</p>
+	</div>
+</aside>
 
 <section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+	{#each articles as article}
+	<ArticleCard {...article} />
+	{/each}
 </section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
