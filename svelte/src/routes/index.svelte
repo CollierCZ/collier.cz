@@ -13,11 +13,13 @@
 </script>
 
 
-<script>
-	/** @type {array} */
-	export let articles;
-
+<script lang="ts">
+	import type { MetadataObject } from "./articles.json";
   import ArticleCard from "../components/ArticleCard.svelte"
+
+	export let articles: Array<MetadataObject>;
+
+	articles = articles.sort((first,second) => new Date(second.published).getTime() - new Date(first.published).getTime())
 </script>
 
 <aside class="text-center items-center justify-center my-8 sm:flex sm:text-left">
@@ -32,7 +34,7 @@
 
 <section>
 	{#each articles as article}
-	<ArticleCard {...article} />
+		<ArticleCard {...article} />
 	{/each}
 </section>
 

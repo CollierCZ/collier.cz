@@ -1,8 +1,12 @@
 ---
 title: How I built and deployed this site
-slug: how-i-built-and-deployed-this-site-for-free
 description: How I built a modern static site at no cost using Gatsby and Kentico Kontent for Content as a Service.
 published: 2019-06-03
+category: Technology
+tags:
+  -  website
+  - static site
+  - content as a service
 ---
 
 I'm not the most technical kind of person, but I've been posting to the internet since the 90s. I believe I built at least one website on [GeoCities](https://en.wikipedia.org/wiki/Yahoo!_GeoCities) that has been (I hope) lost into the ether. To help me practice my skills, I wanted to build a more modern website, but I wanted a modern editing system, not handcoding `<p>` tags or fiddling with Markdown. And I had to stay within my budget, which was just above $0. So how did I do it?

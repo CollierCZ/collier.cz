@@ -1,6 +1,7 @@
 <script>
   export let title;
   export let published;
+  import "prismjs/themes/prism.css"
 </script>
 
 <script context="module">

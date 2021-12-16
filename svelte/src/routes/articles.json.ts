@@ -1,5 +1,6 @@
-interface MetadataObject {
+export interface MetadataObject {
   description: string,
+  published: string,
   slug: string,
   title: string
 }
@@ -14,7 +15,8 @@ export function get(): JsonObject {
     
   const articlesMetadata = JSON.stringify(Object.keys(allArticles).reduce((articlesMetadataCollector, article): Array<MetadataObject> => {
     const articleMetadata = allArticles[article].metadata
-    const { description, published, slug, title } = articleMetadata
+    const slug = article.replace("/src/routes/articles/","").replace(".svelte.md","")
+    const { description, published, title } = articleMetadata
     return [...articlesMetadataCollector, { description, published, slug, title}]
   }, []))
 
