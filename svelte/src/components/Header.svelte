@@ -4,13 +4,13 @@
 </script>
 
 <header>
-	<nav class="flex justify-center items-center mx-auto max-w-80ch prose-lg">
+	<nav class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg px-4 pt-4">
 		<div class="flex-1">
 			{#if $page.path !== '/'}
 				<a sveltekit:prefetch href="/" class="hover:underline focus:underline">← Back</a>
 			{/if}
 		</div>
-		<a sveltekit:prefetch href="/"><img class="rounded-1/2 w-14 h-14 hover:invert hover:filter duration-150" alt="Home" src="/quixote-small.jpg" /></a>
+		<a sveltekit:prefetch href="/"><img class="rounded-1/2 w-14 h-14 my-0 hover:invert hover:filter duration-150" alt="Home" src="/quixote-small.jpg" /></a>
 		<div class="flex-1"></div>
 	</nav>
 </header>
