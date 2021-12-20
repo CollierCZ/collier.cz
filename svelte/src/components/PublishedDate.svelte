@@ -1,5 +1,5 @@
-<script>
-  export let date
+<script lang="ts">
+  export let date: string
   const publishedDate = new Date(date)
 </script>
 

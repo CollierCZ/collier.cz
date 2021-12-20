@@ -1,0 +1,14 @@
+---
+title: Test
+description: A test
+published: 2026-09-16
+---
+
+<script lang="ts">
+	import CopyButton from "../../components/CopyButton.svelte"
+</script>
+
+<CopyButton />
+
+
+dsfsfsdfsd
