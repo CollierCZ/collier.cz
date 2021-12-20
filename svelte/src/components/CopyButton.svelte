@@ -22,11 +22,12 @@
 
   let copyText: string;
   copyTextHandler.subscribe(value => copyText = value)
+  export let textToCopy: string
 </script>
 
 <button
   class="rounded-lg bg-green-100 text-green-900 py-1 px-2 text-base {copyText === 'Copy' ? '' : 'font-extralight'}"
-  on:click={() => handleClick("hello there")}
+  on:click={() => handleClick(textToCopy)}
 >
   {copyText}
 </button>

@@ -9,7 +9,6 @@ tags:
   - work elsewhere
 ---
 
-
 This based on a talk given at the [Write the Docs Prague 2019](http://www.writethedocs.org/conf/prague/2019/) conference
 ([watch the video](https://www.youtube.com/watch?v=vj7TyUgBEW8)).
 
@@ -131,7 +130,7 @@ This helped us process the info we have on our readers so that we didn't have to
 We then gave each group a name and a face so we could relate to the people better.
 This step really helps us get empathy for our users and better understand things from their perspectives.
 
-![A photo of a whitebaord with lots of words on it outlining our ideas about personas](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/a117a29f-7d64-443b-b187-2acc257b4387/Slide11.PNG?w=1100&fit=scale&auto=format)
+![A whiteboard with lots of words on it outlining our ideas about personas](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/a117a29f-7d64-443b-b187-2acc257b4387/Slide11.PNG?w=1100&fit=scale&auto=format)
 
 This photo shows how it looked when we met and started creating our personas.
 You can see each group has a name and a face and then a bunch of characteristics that makes them similar.
@@ -159,7 +158,7 @@ She just wants support for her favorite technology.
 
 #### Esmeralda's experience
 
-![A photo of a white board with an experience map as a graph with time as the X axis and happiness as the Y axis](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/8ac9e925-fc2e-4c22-9f1e-8ef90fd5e2b4/Slide14.PNG?w=1100&fit=scale&auto=format)
+![A whiteboard with an experience map as a graph with time as the X axis and happiness as the Y axis](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/8ac9e925-fc2e-4c22-9f1e-8ef90fd5e2b4/Slide14.PNG?w=1100&fit=scale&auto=format)
 
 This is a picture of our actual map that I drew on the wall.
 As you can see, we chose a simple timeline with a second dimension of user happiness.
@@ -167,7 +166,7 @@ We also marked the interactions with our docs differently that those with our pa
 Esmeralda is invited into a content-related project and has to figure out how to get that content to display to fit her business requirements.
 That happens before she gets to us.
 
-![The map from the previous photo changed into text with some bubbles in blue](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/83d39038-fd88-42d1-ba24-53ffb1ac6672/Slide15.PNG?w=1100&fit=scale&auto=format)
+![The previous experience map changed into text with some bubbles in blue](https://assets-us-01.kc-usercontent.com/3fcf700a-30e8-4d1d-9e64-43193a89fe7a/83d39038-fd88-42d1-ba24-53ffb1ac6672/Slide15.PNG?w=1100&fit=scale&auto=format)
 
 We transferred my scribbles to a more readable form.
 The details aren't important, but you can see the times when she interacted with our docs in a different color than other things she did.

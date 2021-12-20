@@ -8,7 +8,7 @@ published: 2026-09-16
 	import CopyButton from "../../components/CopyButton.svelte"
 </script>
 
-<CopyButton />
+<CopyButton textToCopy="test" />
 
 
 dsfsfsdfsd
