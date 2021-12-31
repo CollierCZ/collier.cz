@@ -1,13 +1,12 @@
 <script>
   export let title;
   export let published;
-  import "prismjs/themes/prism.css"
 </script>
 
 <script context="module">
-  import { a } from '../components/components'
+  import { a, CodeBlock, img } from '../components/components'
   import PublishedDate from "../components/PublishedDate.svelte"
-  export { a }
+  export { a, CodeBlock, img }
 </script>
 
 <h1>{ title }</h1>
