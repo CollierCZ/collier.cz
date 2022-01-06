@@ -18,20 +18,20 @@ feel good about.
 
 <Showcase>
 
-<ShowcaseItem title="Write the Docs talk" link="https://www.youtube.com/watch?v=vj7TyUgBEW8">
+<ShowcaseItem title="Write the Docs talk" link="https://www.youtube.com/watch?v=vj7TyUgBEW8" placeholder="experience-map.png">
 
 A video of a talk I gave at the [Write the Docs Prague 2019](http://www.writethedocs.org/conf/prague/2019/) conference.
 Or read a [text version of the talk](/articles/seeing-your-docs-through-different-eyes).
 
 </ShowcaseItem>
 
-<ShowcaseItem title="Structured content video" link="https://www.youtube.com/watch?v=MlMkAqxoPZM">
+<ShowcaseItem title="Structured content video" link="https://www.youtube.com/watch?v=MlMkAqxoPZM" placeholder="structured-content.png">
 
 A video about what structured content is and how it can benefit content creators.
 
 </ShowcaseItem>
 
-<ShowcaseItem title="Gatsby guide" link="https://www.gatsbyjs.com/docs/sourcing-from-kentico-kontent/">
+<ShowcaseItem title="Gatsby guide" link="https://www.gatsbyjs.com/docs/sourcing-from-kentico-kontent/" placeholder="gatsby-guide.png">
 
 A step-by-step guide to creating websites in [Gatsby](https://www.gatsbyjs.org/) powered by [Kentico Kontent](https://kontent.ai/).
 
