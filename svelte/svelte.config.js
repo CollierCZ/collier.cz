@@ -1,9 +1,11 @@
 import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
-import WindiCSS from 'vite-plugin-windicss'
+import WindiCSS from 'vite-plugin-windicss';
 import { mdsvex } from "mdsvex";
-import relativeImages from "mdsvex-relative-images";
-import shiki from "shiki"
+import relativeImages from 'mdsvex-relative-images';
+import shiki from "shiki";
+import { imagetools } from 'vite-imagetools';
+
 
 const highlighter = async (code, lang) => {
   const highlighter = await shiki.getHighlighter({
@@ -32,11 +34,13 @@ const config = {
 
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
+
 		vite: {
 			plugins: [
 				WindiCSS({
 					configPath: './windi.config.ts'
 				}),
+				imagetools({force: true})
 			],
 		},
 	}

@@ -4,9 +4,9 @@
 </script>
 
 <script context="module">
-  import { a, CodeBlock, img } from '../components/components'
+  import { a, CodeBlock, Image, img } from '../components/components'
   import PublishedDate from "../components/PublishedDate.svelte"
-  export { a, CodeBlock, img }
+  export { a, CodeBlock, Image, img }
 </script>
 
 <h1>{ title }</h1>

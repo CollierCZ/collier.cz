@@ -10,8 +10,6 @@ published: 2026-09-16
 
 <CopyButton textToCopy="test" />
 
-![A test](./avatar.png)
-
 dsfsfsdfsd
 
 This is long text to provide for a long paragraph.
@@ -19,6 +17,8 @@ This is long text to provide for a long paragraph.
 This is long text to provide for a long paragraph.
 This is long text to provide for a long paragraph.
 This is long text to provide for a long paragraph.
+
+<Components.Image />
 
 ```javascript
 if (3 > 5) {
