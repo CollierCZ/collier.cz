@@ -1,9 +1,18 @@
 <script context="module" lang="ts">
 	export const prerender = true;
-	export async function load({ fetch }) {
+	interface ArticleProps {
+		props: {
+			articles: {
+				description: string
+				published: string
+				slug: string
+				title: string
+			}
+		}
+	}
+	export async function load({ fetch }): Promise<ArticleProps> {
 		const url = '/articles.json';
 		const res = await fetch(url);
-
     return {
       props: {
         articles: await res.json()
