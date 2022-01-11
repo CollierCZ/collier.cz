@@ -2,7 +2,7 @@
 title: Reusing content (with variables) in MDX
 description: How I learned to reuse content in a docs-as-code workflow in MDX.
 published: 2021-01-20
-category: Technology
+category: technology
 tags:
   - documentation
   - content

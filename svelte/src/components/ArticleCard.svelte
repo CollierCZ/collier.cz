@@ -1,13 +1,15 @@
-<script>
-  export let description;
-  export let published;
-  export let slug;
-  export let title;
-  import PublishedDate from "../components/PublishedDate.svelte"
+<script lang="ts">
+  export let category = "";
+  export let description: string;
+  export let published: string;
+  export let slug: string;
+  export let tags = [""];
+  export let title: string;
+  import ArticlePublishedInfo from "./ArticlePublishedInfo.svelte"
 </script>
 
 <article>
-<h3><a href="/articles/{slug}">{title}</a></h3>
-<PublishedDate date={published} />
-<p>{description}</p>
+  <h3><a href="/articles/{slug}">{title}</a></h3>
+  <ArticlePublishedInfo category={category} tags={tags} date={published} />
+  <p>{description}</p>
 </article>

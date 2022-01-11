@@ -1,21 +1,19 @@
 <script context="module" lang="ts">
 	export const prerender = true;
-	interface ArticleProps {
-		props: {
-			articles: {
-				description: string
-				published: string
-				slug: string
-				title: string
-			}
+	import type { ArticleMetadata } from "./articles.json";
+	export interface ArticleProps {
+		status: number
+		props?: {
+			articles: ArticleMetadata[]
 		}
 	}
 	export async function load({ fetch }): Promise<ArticleProps> {
 		const url = '/articles.json';
-		const res = await fetch(url);
+		const result = await fetch(url);
     return {
+			status: 200,
       props: {
-        articles: await res.json()
+        articles: await result.json()
       }
     };
 	}
@@ -23,12 +21,11 @@
 
 
 <script lang="ts">
-	import type { MetadataObject } from "./articles.json";
   import ArticleCard from "../components/ArticleCard.svelte"
+	import { sortArticles } from '$lib/utilities'
 
-	export let articles: Array<MetadataObject>;
-
-	articles = articles.sort((first,second) => new Date(second.published).getTime() - new Date(first.published).getTime())
+	export let articles: Array<ArticleMetadata>;
+	articles = sortArticles(articles)
 </script>
 
 <aside class="text-center items-center justify-center my-8 sm:flex sm:text-left">

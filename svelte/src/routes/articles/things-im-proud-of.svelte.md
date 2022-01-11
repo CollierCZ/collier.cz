@@ -2,7 +2,7 @@
 title: Things I'm proud of
 description: Some examples of work by Aaron Collier.
 published: 2019-10-10
-category: Education
+category: education
 tags:
   - work elsewhere
 ---

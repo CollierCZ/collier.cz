@@ -2,6 +2,8 @@
 title: Test
 description: A test
 published: 2026-09-16
+tags:
+  - documentation
 ---
 
 <script lang="ts">
@@ -22,7 +24,7 @@ This is long text to provide for a long paragraph.
 
 ```javascript
 if (3 > 5) {
-	console.log("yes")
+  console.log("yes")
 }
 console.log("no")
 ```

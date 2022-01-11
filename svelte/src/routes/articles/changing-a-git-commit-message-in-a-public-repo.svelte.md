@@ -2,7 +2,7 @@
 title: Changing a git commit message in a public repo
 description: How to change a commit message when you've already pushed it to a public repository in 4 commands.
 published: 2020-11-06
-category: Technology
+category: technology
 tags:
   - git
   - conventional commits

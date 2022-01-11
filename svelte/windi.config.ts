@@ -23,6 +23,15 @@ export default defineConfig({
               whiteSpace: 'pre-wrap',
               wordWrap: 'break-word',
             },
+            a: {
+              fontWeight: 'inherit',
+              '&:hover': {
+                textDecoration: 'none',
+              },
+              '&:focus': {
+                textDecoration: 'none',
+              },
+            },
           },
         },
         lg: {
@@ -33,6 +42,9 @@ export default defineConfig({
               paddingTop: '0',
               whiteSpace: 'pre-wrap',
               wordWrap: 'break-word',
+            },
+            a: {
+              fontWeight: 'inherit',
             },
           }
         }

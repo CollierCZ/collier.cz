@@ -2,7 +2,7 @@
 title: Seeing your docs through different eyes
 description: A look at how to get a new perspective on your documentation by creating reader personas and using them to map experiences with the documentation.
 published: 2019-09-16
-category: Education
+category: education
 tags:
   - documentation
   - experience mapping

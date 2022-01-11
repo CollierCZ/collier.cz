@@ -8,10 +8,10 @@ import { imagetools } from 'vite-imagetools';
 
 
 const highlighter = async (code, lang) => {
-  const highlighter = await shiki.getHighlighter({
+  const highlighterTool = await shiki.getHighlighter({
     theme: "nord",
   });
-  const html = highlighter.codeToHtml(code, {lang: lang});
+  const html = highlighterTool.codeToHtml(code, {lang: lang});
 	return `<Components.CodeBlock html={\`${html}\`} code={\`${code}\`} lang={\`${lang}\`} />`
 }
 
@@ -19,7 +19,7 @@ const highlighter = async (code, lang) => {
 const config = {
 	extensions: ['.svelte', '.svx', '.svelte.md'],
 	preprocess: [
-		mdsvex({
+    mdsvex({
 			extensions: ['.svx', '.svelte.md'],
 			highlight: {
 				highlighter
