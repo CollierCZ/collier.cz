@@ -10,8 +10,8 @@
 </script>
 
 <article>
-  <h3><a href="/articles/{slug}">{title}</a></h3>
-  <ArticlePublishedInfo category={category} tags={tags} date={published} />
+  <h2><a href="/articles/{slug}">{title}</a></h2>
+  <ArticlePublishedInfo category={category} date={published} />
   <div class="mb-2">{description}</div>
   <ArticleTags tags={tags} />
 </article>
