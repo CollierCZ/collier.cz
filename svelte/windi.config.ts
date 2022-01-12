@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite-plugin-windicss'
+import colors from 'windicss/colors'
 
 export default defineConfig({
   darkMode: 'class', // or 'media'
@@ -25,11 +26,12 @@ export default defineConfig({
             },
             a: {
               fontWeight: 'inherit',
+              color: colors.green[700],
               '&:hover': {
-                textDecoration: 'none',
+                color: colors.fuchsia[700],
               },
               '&:focus': {
-                textDecoration: 'none',
+                color: colors.fuchsia[700],
               },
             },
           },
