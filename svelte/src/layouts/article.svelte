@@ -15,6 +15,8 @@
 <h1>{ title }</h1>
 <ArticlePublishedInfo category={category} date={published} />
 <ArticleTags tags={tags} />
-<slot>
-  <!-- the mdsvex content will be slotted in here -->
-</slot>
+
+<!-- Article content -->
+<div class="mt-4">
+  <slot />
+</div>
