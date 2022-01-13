@@ -4,7 +4,6 @@ import WindiCSS from 'vite-plugin-windicss';
 import { mdsvex } from "mdsvex";
 import relativeImages from 'mdsvex-relative-images';
 import shiki from "shiki";
-import { imagetools } from 'vite-imagetools';
 
 
 const highlighter = async (code, lang) => {
@@ -40,7 +39,6 @@ const config = {
 				WindiCSS({
 					configPath: './windi.config.ts'
 				}),
-				imagetools({force: true})
 			],
 		},
 	}

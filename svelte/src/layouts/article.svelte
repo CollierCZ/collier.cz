@@ -1,5 +1,6 @@
 <script lang="ts">
   export let category = "";
+  export let heroImage = "";
   export let published = "";
   export let tags = [""];
   export let title = "";
@@ -15,6 +16,10 @@
 <h1>{ title }</h1>
 <ArticlePublishedInfo category={category} date={published} />
 <ArticleTags tags={tags} />
+
+{#if heroImage}
+  <svelte:component this={Image} name={heroImage} hero height="264" />
+{/if}
 
 <!-- Article content -->
 <div class="mt-4">

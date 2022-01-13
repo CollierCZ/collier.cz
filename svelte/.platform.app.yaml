@@ -10,6 +10,7 @@ type: 'nodejs:16'
 hooks:
     build: |
         set -e
+        npm run format:images
         npm run build
 # The size of the persistent disk of the application (in MB).
 disk: 1024

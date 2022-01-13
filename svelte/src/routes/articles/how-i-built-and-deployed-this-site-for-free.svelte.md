@@ -1,6 +1,7 @@
 ---
 title: How I built and deployed this site
 description: How I built a modern static site at no cost using Gatsby and Kentico Kontent for Content as a Service.
+heroImage: construction
 published: 2019-06-03
 category: technology
 tags:

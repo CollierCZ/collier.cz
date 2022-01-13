@@ -22,11 +22,11 @@
 
 <script lang="ts">
   import ArticleCard from "../components/ArticleCard.svelte"
+	import Image from "../components/Image.svelte";
 	import { sortArticles } from '$lib/utilities'
-  import Avatar from "../images/avatar.png?w=300;400;800&format=webp&srcset"
-  import AvatarPlaceholder from "../images/avatar.png?w=10"	
 	import { media } from "$lib/mediaQueries"
 
+	const avatarSrc = `/formatted-images/avatar`
 	export let articles: Array<ArticleMetadata>;
 	articles = sortArticles(articles)
 </script>
@@ -37,20 +37,7 @@
 		<p>Originally from Lexington and now residing in Brno, Aaron is an educator, editor, and elucidator. <a href="https://collier.cz/aaron-collier" class="underline hover:no-underline focus:no-underline">More about Aaron</a>.</p>
 	</div>
 	<div class="sm:order-1 w-auto sm:w-32 sm:flex-shrink-0 lg:w-36 mx-auto">
-		<picture>
-			<source
-				srcset={Avatar}
-				sizes="(max-width: 800px) 100vw, 800px"
-			/>
-			<img
-				class="p-0"
-				src={AvatarPlaceholder}
-				alt=""
-				style="background-size: cover;background-image: url({AvatarPlaceholder});"
-				width={$media.large ? "144" : $media.small ? "128" : "320"}
-				height={$media.large ? "144" : $media.small ? "128" : "320"}
-			/>
-		</picture>
+		<Image name="avatar" hero original />
 	</div>
 </aside>
 
@@ -61,9 +48,6 @@
 </section>
 
 <style>
-	aside div img {
-		margin: 0;
-	}
 	aside h1 {
 		margin-bottom: 0.5rem;
 	}

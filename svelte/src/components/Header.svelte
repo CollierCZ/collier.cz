@@ -10,7 +10,15 @@
 				<a sveltekit:prefetch href="/" class="hover:underline focus:underline">← Home</a>
 			{/if}
 		</div>
-		<a sveltekit:prefetch href="/"><img class="rounded-1/2 w-14 h-14 my-0 hover:invert hover:filter duration-150" alt="Home" src="/quixote-small.webp" /></a>
+		<a sveltekit:prefetch href="/">
+			<img
+				class="rounded-1/2 w-14 h-14 my-0 hover:invert hover:filter duration-150"
+				alt="Home"
+				src="/quixote-small.webp"
+				height={56}
+				width={56}
+			/>
+		</a>
 		<div class="flex-1"></div>
 	</nav>
 </header>

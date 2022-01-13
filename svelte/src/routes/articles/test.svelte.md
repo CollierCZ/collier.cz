@@ -4,6 +4,7 @@ description: A test
 published: 2026-09-16
 tags:
   - documentation
+imageTest: avatar
 ---
 
 <script lang="ts">

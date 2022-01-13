@@ -1,6 +1,7 @@
 import watchMedia from "svelte-media";
 
 const mediaqueries = {
+  xSmall: "(min-width: 480px)",
   small: "(min-width: 640px)",
   medium: "(min-width: 768px)",
   large: "(min-width: 1024px)",
