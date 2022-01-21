@@ -12,6 +12,9 @@ hooks:
 
 # Configure the web server to serve our static site.
 web:
+    # Site is static, so don't waste resources
+    commands:
+        start: sleep infinity
     locations:
         # This tells Nginx to serve from the base directory
         "/":

@@ -16,6 +16,9 @@ hooks:
 disk: 1024
 
 web:
+    # Site is static, so don't waste resources
+    commands:
+        start: sleep infinity
     locations:
         '/':
             # The public directory of the application relative to its root.
