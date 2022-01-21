@@ -1,0 +1,26 @@
+# The name of this app. Must be unique within the project.
+name: presentations
+
+# Any type will work. There is no "plain HTML" type.
+type: "nodejs:16"
+
+# There is no need for a writable file mount, so set it to the smallest possible size.
+disk: 256
+
+hooks:
+    build: npm run build
+
+# Configure the web server to serve our static site.
+web:
+    locations:
+        # This tells Nginx to serve from the base directory
+        "/":
+            root: "dist"
+            passthru: true
+            index: ['index.html']
+            scripts: false
+            allow: true
+            expires: 24h
+            rules:
+                \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|cast|mp4|json|yaml|ico|svg?|cast|mp4|json|yaml|svg?|ttf)$:
+                    expires: 4w
