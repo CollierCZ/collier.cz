@@ -9,8 +9,8 @@ tags:
 ---
 
 <script>
-  import Showcase from "../../components/Showcase.svelte"
-  import ShowcaseItem from "../../components/ShowcaseItem.svelte"
+  import Showcase from "$lib/components/Showcase.svelte"
+  import ShowcaseItem from "$lib/components/ShowcaseItem.svelte"
 </script>
 
 I was recently asked to give some examples of my work so I thought it

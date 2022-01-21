@@ -4,6 +4,8 @@ import WindiCSS from 'vite-plugin-windicss';
 import { mdsvex } from "mdsvex";
 import relativeImages from 'mdsvex-relative-images';
 import shiki from "shiki";
+import { dirname, join } from "path"
+import { fileURLToPath } from 'url';
 
 
 const highlighter = async (code, lang) => {
@@ -23,7 +25,7 @@ const config = {
 			highlight: {
 				highlighter
 			},
-			layout: "src/layouts/article.svelte",
+			layout: join(dirname(fileURLToPath(import.meta.url)), "./src/lib/layouts/article.svelte"),
 			remarkPlugins: [relativeImages],
 		}),
 		preprocess(),

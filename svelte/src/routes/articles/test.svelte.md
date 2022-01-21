@@ -8,7 +8,7 @@ imageTest: avatar
 ---
 
 <script lang="ts">
-	import CopyButton from "../../components/CopyButton.svelte"
+	import CopyButton from "$lib/components/CopyButton.svelte"
 </script>
 
 <CopyButton textToCopy="test" />

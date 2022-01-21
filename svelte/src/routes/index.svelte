@@ -21,8 +21,8 @@
 
 
 <script lang="ts">
-  import ArticleCard from "../components/ArticleCard.svelte"
-	import Image from "../components/Image.svelte";
+  import ArticleCard from "$lib/components/ArticleCard.svelte"
+	import Image from "$lib/components/Image.svelte";
 	import { sortArticles } from '$lib/utilities'
 	import { media } from "$lib/mediaQueries"
 

@@ -14,7 +14,7 @@
 
 <script lang="ts">
 	import type { ArticleMetadata } from "../articles.json";
-  import ArticleCard from "../../components/ArticleCard.svelte"
+  import ArticleCard from "$lib/components/ArticleCard.svelte"
 	import { sortArticles } from '$lib/utilities'
 
 	export let articles: Array<ArticleMetadata>;
