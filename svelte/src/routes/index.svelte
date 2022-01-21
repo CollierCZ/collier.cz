@@ -24,9 +24,7 @@
   import ArticleCard from "$lib/components/ArticleCard.svelte"
 	import Image from "$lib/components/Image.svelte";
 	import { sortArticles } from '$lib/utilities'
-	import { media } from "$lib/mediaQueries"
 
-	const avatarSrc = `/formatted-images/avatar`
 	export let articles: Array<ArticleMetadata>;
 	articles = sortArticles(articles)
 </script>

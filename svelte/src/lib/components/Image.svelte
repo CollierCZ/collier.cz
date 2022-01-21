@@ -6,14 +6,14 @@
   export let height = "";
   export let width = "";
 	import { media } from "$lib/mediaQueries";
-  let imageSrc;
+  let imageSrc = '';
 	$: imageSrc = `/formatted-images/${(hero && !original) ? "heroes" : 'originals'}/${name}`;
 </script>
 
 <div class={(!hero && $media.medium) ? "px-8" : ""}>
   <picture>
     <source
-      srcset={`${imageSrc}-medium.webp 300w, ${imageSrc}-medium.webp 500w, ${imageSrc}.webp 800w`}
+      srcset={`${imageSrc}-narrow.webp 300w, ${imageSrc}-medium.webp 500w, ${imageSrc}.webp 800w`}
       sizes="(min-width: 480px) 500px, (min-width: 768px) 800px, 300px"
     />
       <img

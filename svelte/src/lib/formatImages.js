@@ -34,6 +34,11 @@ const resizeImages = async (type) => {
     width: 300
   }
 
+  const squareResizeObject = {
+    width: 300,
+    height: 300
+  }
+
   try {
     const files = await readdir(path.resolve(inputDirectory));
     for (const file of files) {
@@ -49,6 +54,9 @@ const resizeImages = async (type) => {
       formatImage(mediumResizeObject, 80, "-medium");
       formatImage(narrowResizedObject, 80, "-narrow");
       formatImage(wideResizeObject, 100, "-placeholder");
+      if (type === "heroes") {
+        formatImage(squareResizeObject, 100, "-square");
+      }
     }
   } catch (err) {
     console.error(err);
