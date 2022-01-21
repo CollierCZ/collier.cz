@@ -37,28 +37,18 @@ const resizeImages = async (type) => {
   try {
     const files = await readdir(path.resolve(inputDirectory));
     for (const file of files) {
-      sharp(`${inputDirectory}/${file}`)
-        .toFormat('webp')
-        .resize(wideResizeObject)
-        .webp({ quality: 100 })
-        .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,'.webp')}`)
-        .catch(error => console.error(error))
-      sharp(`${inputDirectory}/${file}`)
-        .toFormat('webp')
-        .resize(mediumResizeObject)
-        .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,'-medium.webp')}`)
-        .catch(error => console.error(error))
-      sharp(`${inputDirectory}/${file}`)
-        .toFormat('webp')
-        .resize(narrowResizedObject)
-        .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,'-narrow.webp')}`)
-        .catch(error => console.error(error))
-      sharp(`${inputDirectory}/${file}`)
-        .toFormat('webp')
-        .resize(wideResizeObject)
-        .webp({ quality: 1 })
-        .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,'-placeholder.webp')}`)
-        .catch(error => console.error(error))
+      const formatImage = (dimensionsObject, quality = 80, suffix = '') => {
+        sharp(`${inputDirectory}/${file}`)
+          .toFormat('webp')
+          .resize(dimensionsObject)
+          .webp({ quality: quality })
+          .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,`${suffix}.webp`)}`)
+          .catch(error => console.error(error))
+      }
+      formatImage(wideResizeObject, 100);
+      formatImage(mediumResizeObject, 80, "-medium");
+      formatImage(narrowResizedObject, 80, "-narrow");
+      formatImage(wideResizeObject, 100, "-placeholder");
     }
   } catch (err) {
     console.error(err);
