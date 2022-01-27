@@ -24,6 +24,7 @@
     "mdsvex-relative-images": "^1.0.1",
     "shiki": "^0.10.0",
     "svelte": "^3.44.0",
+    "svelte-awesome": "^2.4.4",
     "svelte-check": "^2.2.6",
     "svelte-media": "^0.1.5",
     "svelte-preprocess": "^4.9.4",

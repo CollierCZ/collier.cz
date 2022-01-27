@@ -21,6 +21,9 @@
 
 
 <script lang="ts">
+	import Icon from "svelte-awesome"
+	import { envelopeSquare, github, rssSquare } from "svelte-awesome/icons"
+
   import ArticleCard from "$lib/components/ArticleCard.svelte"
 	import Image from "$lib/components/Image.svelte";
 	import { sortArticles } from '$lib/utilities'
@@ -33,6 +36,11 @@
 	<div class="sm:pl-8 prose lg:prose-lg sm:order-2">
 		<h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
 		<p>Originally from Lexington and now residing in Brno, Aaron is an educator, editor, and elucidator. <a href="https://collier.cz/aaron-collier" class="underline hover:no-underline focus:no-underline">More about Aaron</a>.</p>
+	<div>
+		<a class="pr-2" href="https://github.com/CollierCZ"><Icon data={github} scale={2} label="GitHub" /></a>
+		<a href="mailto:aaron@collier.cz"><Icon data={envelopeSquare} scale={2} label="Email" /></a>
+		<a class="pl-2" href="/rss"><Icon data={rssSquare} scale={2} label="RSS" /></a>
+	</div>
 	</div>
 	<div class="sm:order-1 w-auto sm:w-32 sm:flex-shrink-0 lg:w-36 mx-auto">
 		<Image name="avatar" hero original />
