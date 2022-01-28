@@ -1,7 +1,7 @@
 import path from 'path';
 import sharp from 'sharp';
 import { readdir } from 'fs/promises';
-import { existsSync, mkdirSync } from 'fs';
+import { existsSync, mkdirSync, statSync } from 'fs';
 
 const resizeImages = async (type) => {
   const inputDirectory = `src/images/${type}`
@@ -41,7 +41,25 @@ const resizeImages = async (type) => {
 
   try {
     const files = await readdir(path.resolve(inputDirectory));
-    for (const file of files) {
+    const processImage = async (file) => {
+      if (file.endsWith('.svg')) return
+      const stats = statSync(`${inputDirectory}/${file}`)
+
+      // check if it's a folder
+      if (stats.isDirectory()) {
+        // create folder if it doesn't exist
+        const outputFolder = `${outputDirectory}/${file}`
+        if (!existsSync(outputFolder)) {
+          mkdirSync(outputFolder, {recursive: true})
+        }
+
+        // repeat for files in the directory
+        const dirFiles = await readdir(path.resolve(`${inputDirectory}/${file}`));
+        for (const dirFile of dirFiles) {
+          processImage(`${file}/${dirFile}`)
+        }
+        return
+      }
       const formatImage = (dimensionsObject, quality = 80, suffix = '') => {
         sharp(`${inputDirectory}/${file}`)
           .toFormat('webp')
@@ -57,6 +75,9 @@ const resizeImages = async (type) => {
       if (type === "heroes") {
         formatImage(squareResizeObject, 100, "-square");
       }
+    }
+    for (const file of files) {
+      processImage(file)
     }
   } catch (err) {
     console.error(err);
