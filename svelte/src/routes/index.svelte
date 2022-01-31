@@ -1,6 +1,8 @@
 <script context="module" lang="ts">
-	export const prerender = true;
 	import type { ArticleMetadata } from "./articles.json";
+	import { getArticles } from "$lib/utilities";
+
+	export const prerender = true;
 	export interface ArticleProps {
 		status: number
 		props?: {
@@ -8,12 +10,11 @@
 		}
 	}
 	export async function load({ fetch }): Promise<ArticleProps> {
-		const url = '/articles.json';
-		const result = await fetch(url);
+		const articles = await getArticles(fetch)
     return {
 			status: 200,
       props: {
-        articles: await result.json()
+        articles: articles
       }
     };
 	}
@@ -26,10 +27,8 @@
 
   import ArticleCard from "$lib/components/ArticleCard.svelte"
 	import Image from "$lib/components/Image.svelte";
-	import { sortArticles } from '$lib/utilities'
 
 	export let articles: Array<ArticleMetadata>;
-	articles = sortArticles(articles)
 </script>
 
 <aside class="text-center items-center justify-center max-w-xs sm:max-w-80ch mx-auto sm:mx-0 my-8 sm:flex sm:text-left">
@@ -39,7 +38,7 @@
 	<div>
 		<a class="pr-2" href="https://github.com/CollierCZ"><Icon data={github} scale={2} label="GitHub" /></a>
 		<a href="mailto:aaron@collier.cz"><Icon data={envelopeSquare} scale={2} label="Email" /></a>
-		<a class="pl-2" href="/rss"><Icon data={rssSquare} scale={2} label="RSS" /></a>
+		<a class="pl-2" href="/rss.xml"><Icon data={rssSquare} scale={2} label="RSS" /></a>
 	</div>
 	</div>
 	<div class="sm:order-1 w-auto sm:w-32 sm:flex-shrink-0 lg:w-36 mx-auto">

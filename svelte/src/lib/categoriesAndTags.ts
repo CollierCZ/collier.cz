@@ -2,14 +2,12 @@ import type { ArticleMetadata } from "../routes/articles.json";
 import type { ArticleProps } from "../routes/index.svelte"
 import type { Page } from "@sveltejs/kit"
 import type { fetch } from "@sveltejs/kit/install-fetch"
+import { getArticles } from "$lib/utilities" 
 
 type CategoryOrTag = "category" | "tag"
 
 export const filterArticles = async (fetch: fetch, page: Page, type: CategoryOrTag): Promise<ArticleProps> => {
-  const url = '/articles.json';
-
-  const result = await fetch(url);
-  const articlesJson = await result.json()
+  const articlesJson = await getArticles(fetch)
 
   const filteredArticles = articlesJson.filter((article: ArticleMetadata) => {
     if (type === "category") return article.category === page.params.category;
