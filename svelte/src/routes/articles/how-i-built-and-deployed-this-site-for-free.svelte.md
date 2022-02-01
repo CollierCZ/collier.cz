@@ -5,7 +5,7 @@ heroImage: construction
 published: 2019-06-03
 category: technology
 tags:
-  -  website
+  - website
   - static site
   - content as a service
 ---
