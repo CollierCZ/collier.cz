@@ -6,7 +6,7 @@
   export let title = "";
 </script>
 
-<script context="module">
+<script context="module" lang="ts">
   import { a, CodeBlock, Image, img } from '../components/components'
   import ArticlePublishedInfo from "../components/ArticlePublishedInfo.svelte"
   import ArticleTags from "../components/ArticleTags.svelte"

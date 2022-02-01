@@ -23,11 +23,14 @@ export const filterArticles = async (fetch: fetch, params: ArticleParameters, ty
     return article.tags.find(tag => tag === params.tag);
   })
 
-  return checkIfArticles(filteredArticles)
+  return checkIfArticles(filteredArticles, type, params)
 }
 
-const checkIfArticles = (articles: ArticleMetadata[]): ArticleProps => {
-  if (articles.length === 0) return { status: 404 }
+const checkIfArticles = (articles: ArticleMetadata[], type: CategoryOrTag, params: ArticleParameters): ArticleProps => {
+  if (articles.length === 0) return { 
+    status: 404,
+    error: `No articles found ${type === "category" ? `in the ${params.category} category` : `tagged as ${params.tag}`}`
+  }
 
   return {
     status: 200,
