@@ -6,7 +6,7 @@
 <header>
   <nav class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg px-4 pt-4">
     <div class="flex-1">
-      {#if $page.path !== '/'}
+      {#if $page.url.pathname !== '/'}
         <a sveltekit:prefetch href="/" class="hover:underline focus:underline">← Home</a>
       {/if}
     </div>

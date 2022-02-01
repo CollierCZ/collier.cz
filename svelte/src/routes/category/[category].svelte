@@ -6,10 +6,10 @@
 
   let title = ""
 
-  export async function load({ page, fetch }: LoadProps): Promise<ArticleProps> {
-    title = `Articles about ${page.params.category}`
+  export async function load({ params, fetch }: LoadProps): Promise<ArticleProps> {
+    title = `Articles about ${params.category}`
 
-    return await filterArticles(fetch, page, "category")
+    return await filterArticles(fetch, params, "category")
   }
 </script>
 

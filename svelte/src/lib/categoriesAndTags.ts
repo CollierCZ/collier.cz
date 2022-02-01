@@ -1,22 +1,26 @@
 import type { ArticleMetadata } from "../routes/articles.json";
 import type { ArticleProps } from "../routes/index.svelte"
-import type { Page } from "@sveltejs/kit"
 import type { fetch } from "@sveltejs/kit/install-fetch"
 import { getArticles } from "$lib/utilities" 
 
 type CategoryOrTag = "category" | "tag"
 
-export interface LoadProps {
-  fetch: fetch
-  page: Page
+interface ArticleParameters {
+  category?: string
+  tag?: string
 }
 
-export const filterArticles = async (fetch: fetch, page: Page, type: CategoryOrTag): Promise<ArticleProps> => {
+export interface LoadProps {
+  fetch: fetch
+  params: ArticleParameters
+}
+
+export const filterArticles = async (fetch: fetch, params: ArticleParameters, type: CategoryOrTag): Promise<ArticleProps> => {
   const articlesJson = await getArticles(fetch)
 
   const filteredArticles = articlesJson.filter((article: ArticleMetadata) => {
-    if (type === "category") return article.category === page.params.category;
-    return article.tags.find(tag => tag === page.params.tag);
+    if (type === "category") return article.category === params.category;
+    return article.tags.find(tag => tag === params.tag);
   })
 
   return checkIfArticles(filteredArticles)
