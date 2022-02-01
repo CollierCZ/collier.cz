@@ -47,7 +47,7 @@
     <a class="pl-2" target="_self" href="/rss.xml"><Icon data={rssSquare} scale={2} label="RSS" /></a>
   </div>
   </div>
-  <div class="sm:order-1 w-auto sm:w-32 sm:flex-shrink-0 lg:w-36 mx-auto">
+  <div class="sm:order-1 w-auto sm:w-42 sm:flex-shrink-0 lg:w-48 mx-auto">
     <Image name="avatar" hero original />
   </div>
 </aside>
