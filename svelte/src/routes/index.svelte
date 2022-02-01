@@ -44,7 +44,7 @@
   <div>
     <a class="pr-2" href="https://github.com/CollierCZ"><Icon data={github} scale={2} label="GitHub" /></a>
     <a href="mailto:aaron@collier.cz"><Icon data={envelopeSquare} scale={2} label="Email" /></a>
-    <a class="pl-2" href="/rss.xml"><Icon data={rssSquare} scale={2} label="RSS" /></a>
+    <a class="pl-2" target="_self" href="/rss.xml"><Icon data={rssSquare} scale={2} label="RSS" /></a>
   </div>
   </div>
   <div class="sm:order-1 w-auto sm:w-32 sm:flex-shrink-0 lg:w-36 mx-auto">
