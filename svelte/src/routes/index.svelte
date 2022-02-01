@@ -40,7 +40,7 @@
 <aside class="text-center items-center justify-center max-w-xs sm:max-w-80ch mx-auto sm:mx-0 my-8 sm:flex sm:text-left">
   <div class="sm:pl-8 prose lg:prose-lg sm:order-2">
     <h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
-    <p>Originally from Lexington and now residing in Brno, Aaron is an educator, editor, and elucidator. <a href="https://collier.cz/aaron-collier" class="underline hover:no-underline focus:no-underline">More about Aaron</a>.</p>
+    <p>Originally from Lexington and now residing in Brno, I'm an educator, editor, and elucidator. <a href="/about-me/" class="underline hover:no-underline focus:no-underline">More about me</a>.</p>
   <div>
     <a class="pr-2" href="https://github.com/CollierCZ"><Icon data={github} scale={2} label="GitHub" /></a>
     <a href="mailto:aaron@collier.cz"><Icon data={envelopeSquare} scale={2} label="Email" /></a>
