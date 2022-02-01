@@ -1,22 +1,23 @@
 <script context="module" lang="ts">
-	export const prerender = true;
-	import type { ArticleProps } from "../index.svelte";
-	import { filterArticles } from "$lib/categoriesAndTags";
+  export const prerender = true;
+  import type { ArticleProps } from "../index.svelte";
+  import type { LoadProps } from "$lib/categoriesAndTags";
+  import { filterArticles } from "$lib/categoriesAndTags";
 
-	let title = ""
+  let title = ""
 
-	export async function load({ page, fetch }): Promise<ArticleProps> {
-		title = `Articles about ${page.params.category}`
+  export async function load({ page, fetch }: LoadProps): Promise<ArticleProps> {
+    title = `Articles about ${page.params.category}`
 
-		return await filterArticles(fetch, page, "category")
-	}
+    return await filterArticles(fetch, page, "category")
+  }
 </script>
 
 <script lang="ts">
-	import type { ArticleMetadata } from "../articles.json";
+  import type { ArticleMetadata } from "../articles.json";
   import ArticleCard from "$lib/components/ArticleCard.svelte"
 
-	export let articles: Array<ArticleMetadata>;
+  export let articles: Array<ArticleMetadata>;
 </script>
 
 <svelte:head>
@@ -28,7 +29,7 @@
 </h1>
 
 <section>
-	{#each articles as article}
-		<ArticleCard {...article} />
-	{/each}
+  {#each articles as article}
+    <ArticleCard {...article} />
+  {/each}
 </section>

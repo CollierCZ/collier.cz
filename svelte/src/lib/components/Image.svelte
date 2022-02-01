@@ -5,9 +5,9 @@
   export let original = false;
   export let height = "";
   export let width = "";
-	import { media } from "$lib/mediaQueries";
+  import { media } from "$lib/mediaQueries";
   let imageSrc = '';
-	$: imageSrc = `/formatted-images/${(hero && !original) ? "heroes" : 'originals'}/${name}`;
+  $: imageSrc = `/formatted-images/${(hero && !original) ? "heroes" : 'originals'}/${name}`;
 </script>
 
 <div class={(!hero && $media.medium) ? "px-8" : ""}>
@@ -22,8 +22,8 @@
         alt={alt}
         loading={hero ? "" : "lazy"}
         decoding={hero ? "sync" : "async"}
-				height={height || ($media.small ? "400" : "300")}
-				width={width || ($media.small ? "800" : $media.xSmall ? "600" : "440")}
+        height={height || ($media.small ? "400" : "300")}
+        width={width || ($media.small ? "800" : $media.xSmall ? "600" : "440")}
         style="background-size: cover;background-image: url({`${imageSrc}-placeholder.webp`});"
       />
   </picture>

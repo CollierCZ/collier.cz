@@ -13,38 +13,38 @@ const highlighter = async (code, lang) => {
     theme: "nord",
   });
   const html = highlighterTool.codeToHtml(code, {lang: lang});
-	return `<Components.CodeBlock html={\`${html}\`} code={\`${code}\`} lang={\`${lang}\`} />`
+  return `<Components.CodeBlock html={\`${html}\`} code={\`${code}\`} lang={\`${lang}\`} />`
 }
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	extensions: ['.svelte', '.svx', '.svelte.md'],
-	preprocess: [
+  extensions: ['.svelte', '.svx', '.svelte.md'],
+  preprocess: [
     mdsvex({
-			extensions: ['.svx', '.svelte.md'],
-			highlight: {
-				highlighter
-			},
-			layout: join(dirname(fileURLToPath(import.meta.url)), "./src/lib/layouts/article.svelte"),
-			remarkPlugins: [relativeImages],
-		}),
-		preprocess(),
-	],
-	kit: {
-		adapter: adapter(),
-		trailingSlash: "always",
+      extensions: ['.svx', '.svelte.md'],
+      highlight: {
+        highlighter
+      },
+      layout: join(dirname(fileURLToPath(import.meta.url)), "./src/lib/layouts/article.svelte"),
+      remarkPlugins: [relativeImages],
+    }),
+    preprocess(),
+  ],
+  kit: {
+    adapter: adapter(),
+    trailingSlash: "always",
 
-		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
+    // hydrate the <div id="svelte"> element in src/app.html
+    target: '#svelte',
 
-		vite: {
-			plugins: [
-				WindiCSS({
-					configPath: './windi.config.ts'
-				}),
-			],
-		},
-	}
+    vite: {
+      plugins: [
+        WindiCSS({
+          configPath: './windi.config.ts'
+        }),
+      ],
+    },
+  }
 };
 
 export default config;

@@ -10,7 +10,7 @@
   import ArticleTags from "./ArticleTags.svelte"
   import Image from "./Image.svelte";
   import SquareImage from "./SquareImage.svelte";
-	import { media } from "$lib/mediaQueries"
+  import { media } from "$lib/mediaQueries"
 </script>
 
 <article class="grid grid-cols-1 sm:grid-cols-[2fr,1fr] sm:gap-2 lg:gap-4">

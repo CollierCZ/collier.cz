@@ -6,6 +6,11 @@ import { getArticles } from "$lib/utilities"
 
 type CategoryOrTag = "category" | "tag"
 
+export interface LoadProps {
+  fetch: fetch
+  page: Page
+}
+
 export const filterArticles = async (fetch: fetch, page: Page, type: CategoryOrTag): Promise<ArticleProps> => {
   const articlesJson = await getArticles(fetch)
 
