@@ -14,8 +14,12 @@
 </script>
 
 <h1>{ title }</h1>
-<ArticlePublishedInfo category={category} date={published} />
-<ArticleTags tags={tags} />
+{#if category}
+  <ArticlePublishedInfo category={category} date={published} />
+{/if}
+  {#if tags[0]}
+  <ArticleTags tags={tags} />
+{/if}
 
 {#if heroImage}
   <svelte:component this={Image} name={heroImage} hero height="264" />

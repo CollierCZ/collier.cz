@@ -1,10 +1,7 @@
 ---
 title: About me
 description: A little about Aaron Collier.
-published: 2022-02-02
-category: education
-tags:
-  - introduction
+published: 2021-02-01
 ---
 
 I grew up in [Lexington](https://en.wikipedia.org/wiki/Lexington,_Massachusetts)
