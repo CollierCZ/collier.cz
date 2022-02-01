@@ -15,7 +15,7 @@
 
 <article class="grid grid-cols-1 sm:grid-cols-[2fr,1fr] sm:gap-2 lg:gap-4">
   <div>
-    <h2><a href="/articles/{slug}">{title}</a></h2>
+    <h2><a href="/articles/{slug}/">{title}</a></h2>
     <ArticlePublishedInfo category={category} date={published} />
     <div class="mb-2">{description}</div>
     <ArticleTags tags={tags} />

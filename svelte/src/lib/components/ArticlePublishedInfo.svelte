@@ -7,7 +7,7 @@
 <div class="font-light mt-0">
   Published <time datetime="{date}">{new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(publishedDate)}</time>
   {#if category}
-    in <a sveltekit:prefetch href="/category/{category}">{category.charAt(0).toUpperCase() + category.slice(1)}</a>
+    in <a sveltekit:prefetch href="/category/{category}/">{category.charAt(0).toUpperCase() + category.slice(1)}</a>
   {/if}
 </div>
  

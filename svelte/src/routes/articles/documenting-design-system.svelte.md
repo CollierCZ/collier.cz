@@ -15,7 +15,6 @@ tags:
   import { apple, android } from "svelte-awesome/icons"
   import faFigma from "@fortawesome/free-brands-svg-icons/faFigma"
   import faReact from "@fortawesome/free-brands-svg-icons/faReact"
-
 </script>
 
 ## Lessons learned from open sourcing the Orbit docs
