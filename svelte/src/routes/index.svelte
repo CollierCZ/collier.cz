@@ -2,6 +2,7 @@
   import type { ArticleMetadata } from "./articles.json";
   import type { fetch } from "@sveltejs/kit/install-fetch";
   import { getArticles } from "$lib/utilities";
+  import Seo from "$lib/components/Seo.svelte";
 
   export const prerender = true;
   export interface ArticleProps {
@@ -25,6 +26,8 @@
     };
   }
 </script>
+
+<Seo url="https://collier.cz" title="Aaron Collier" description="" />
 
 
 <script lang="ts">
