@@ -12,7 +12,7 @@ Then install everything needed:
 npm i
 ```
 
-Then get the dev server started and open:
+Then get the development server started and open:
 
 ```bash
 npm run dev -- --open
