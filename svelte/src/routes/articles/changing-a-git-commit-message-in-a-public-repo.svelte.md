@@ -36,7 +36,7 @@ If you haven't already done so, you need to have the repository on your local ma
 git clone <LOCATION_OF_REPOSITORY>
 ```
 
-If you already have the repo, make sure to update it with the latest changes:
+If you already have the repository, make sure to update it with the latest changes:
 
 ```bash
 git pull

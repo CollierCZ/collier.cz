@@ -10,7 +10,7 @@ tags:
   - content as a service
 ---
 
-I'm not the most technical kind of person, but I've been posting to the internet since the 90s. I believe I built at least one website on [GeoCities](https://en.wikipedia.org/wiki/Yahoo!_GeoCities) that has been (I hope) lost into the ether. To help me practice my skills, I wanted to build a more modern website, but I wanted a modern editing system, not handcoding `<p>` tags or fiddling with Markdown. And I had to stay within my budget, which was just above $0. So how did I do it?
+I'm not the most technical kind of person, but I've been posting to the internet since the 90s. I believe I built at least one website on [GeoCities](https://en.wikipedia.org/wiki/Yahoo!_GeoCities) that has been (I hope) lost into the ether. To help me practice my skills, I wanted to build a more modern website, but I wanted a modern editing system, not hand coding `<p>` tags or fiddling with Markdown. And I had to stay within my budget, which was just above $0. So how did I do it?
 
 ## To get fast, get static
 
@@ -62,6 +62,6 @@ For another, I can make use of [webhooks from Kentico Kontent](https://docs.kont
 
 So now I have a website, with content pulled as a service from Kentico Kontent and put into a Gatsby project that is rebuilt automatically and deployed by Netlify.
 
-Now, I did cheat a little. The free tier of Netlify allows you to deploy the site to a subdomain of netlify.com, but I'm a little vain, so I splurged on a vanity URL. If you want to keep it all free, you can certainly do so. Otherwise, it's just a few dollars a year to choose any open domain name.
+Now, I did cheat a little. The free tier of Netlify allows you to deploy the site to a subdomain of Netlify.com, but I'm a little vain, so I splurged on a vanity URL. If you want to keep it all free, you can certainly do so. Otherwise, it's just a few dollars a year to choose any open domain name.
 
 If you have any questions about how the site was put together, take a look at the [GitHub repository](https://github.com/CollierCZ/CollierCZ) and feel free to open an issue with any questions.

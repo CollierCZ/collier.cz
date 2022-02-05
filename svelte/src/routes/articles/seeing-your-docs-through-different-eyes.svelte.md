@@ -22,7 +22,7 @@ This is what keeps my job important: the people who use it.
 
 So for my docs to be the best they can be, they have to help readers achieve their goals.
 To do that, I have to know who my readers are and what they're trying to achieve.
-Another way to put that is that as documentatarians, a lot of what we do is translate across contexts
+Another way to put that is that as documentarians, a lot of what we do is translate across contexts
 and to do that we need to know what the context of the reader is likely to be.
 
 > You never really understand a person until you consider things from [their] point of view

@@ -23,13 +23,13 @@ The idea is that if something changes (the name of a step, a piece of the UI, or
 you can update it in one place and have it automatically correct everywhere.
 You don't have to spend time hunting through your docs for references to something outdated.
 
-Some people have pointed to Asciidoc and its native [support for including other files](https://asciidoc.org/userguide.html#_system_macros) as the answer.
+Some people have pointed to AsciiDoc and its native [support for including other files](https://asciidoc.org/userguide.html#_system_macros) as the answer.
 The objection is that this is another syntax to learn and another barrier to overcome, while developers are already used to writing in Markdown.
 
 For our [Orbit design system](https://orbit.kiwi/),
 we're transitioning our docs to a system based on [Gatsby](https://gatsbyjs.com/) with the content in [MDX](https://mdxjs.com/).
 Our components are already in React, so the ability to use [JSX](https://reactjs.org/docs/introducing-jsx.html) in Markdown is a real benefit for us.
-So we don't want to switch to Asciidoc or any other language.
+So we don't want to switch to AsciiDoc or any other language.
 
 So we want the benefit of content reuse within the syntax that we're familiar with.
 I asked myself whether it was possible.
@@ -99,8 +99,8 @@ To reduce the amount you have to repeat yourself, take advantage of MDX import c
 
 First, you want to create a snippet that can be shared among files.
 
-(Before you create such a file, you'll want to give some thought to where your snippets will live in your repo, how you'll reference them,
-what kind of structure/naming convention you'll want to use, and more.
+(Before you create such a file, you'll want to give some thought to where your snippets will live in your repository,
+how you'll reference them, what kind of structure/naming convention you'll want to use, and more.
 That depends a lot on your situation, so it's more than can be answered here.)
 
 For now, create a `more-than-color.mdx` file inside a `snippets` folder:
@@ -214,5 +214,5 @@ But it works.
 
 So now our docs can reuse content, and even display the content differently depending on the context.
 
-It's all still a work in progress, but you can see our progress in [our GitHub repo](https://github.com/kiwicom/orbit/tree/master/docs).
+It's all still a work in progress, but you can see our progress in [our GitHub repository](https://github.com/kiwicom/orbit/tree/master/docs).
 Our eventual plan is to release a docs theme for Gatsby, so let us know at GitHub if there's anything you'd like to see there.

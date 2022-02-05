@@ -13,8 +13,6 @@ imageTest: avatar
 
 <CopyButton textToCopy="test" />
 
-dsfsfsdfsd
-
 This is long text to provide for a long paragraph.
 This is long text to provide for a long paragraph.
 This is long text to provide for a long paragraph.

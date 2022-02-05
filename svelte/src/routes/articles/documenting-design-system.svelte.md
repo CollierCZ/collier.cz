@@ -25,7 +25,7 @@ You can see the [slides from the talk](https://presentations.collier.cz/slides/d
 ## Design systems...
 
 If you aren't familiar with design systems,
-it might help to go through some quotes from design systems I admire and drew insipiration from.
+it might help to go through some quotes from design systems I admire and drew inspiration from.
 This can help set the context of what design systems are for and how documentation fits help accomplish those goals.
 
 > ... allow ... users to build consistent digital experiences faster
