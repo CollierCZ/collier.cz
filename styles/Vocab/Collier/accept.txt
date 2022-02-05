@@ -6,8 +6,10 @@ Kentico
 knowns
 Kontent
 Matija
+mdsvex
 Netlify
 Seitler
 Spotify
 Temkin
 transclusion
+Vite
