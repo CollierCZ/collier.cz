@@ -3,7 +3,7 @@ import sharp from 'sharp';
 import { readdir } from 'fs/promises';
 import { existsSync, mkdirSync, statSync } from 'fs';
 
-const resizeImages = async (type) => {
+const resizeImages = async (type: string) => {
   const inputDirectory = `src/images/${type}`
   const outputDirectory = `static/formatted-images/${type}`
   if (!existsSync(inputDirectory)) {
@@ -41,7 +41,7 @@ const resizeImages = async (type) => {
 
   try {
     const files = await readdir(path.resolve(inputDirectory));
-    const processImage = async (file) => {
+    const processImage = async (file: string) => {
       if (file.endsWith('.svg')) return
       const stats = statSync(`${inputDirectory}/${file}`)
 
@@ -60,10 +60,15 @@ const resizeImages = async (type) => {
         }
         return
       }
-      const formatImage = (dimensionsObject, quality = 80, suffix = '') => {
+
+      interface DimentionsObject {
+        width: number
+        height?: number
+      }
+      const formatImage = (dimensions: DimentionsObject, quality = 80, suffix = '') => {
         sharp(`${inputDirectory}/${file}`)
           .toFormat('webp')
-          .resize(dimensionsObject)
+          .resize(dimensions)
           .webp({ quality: quality })
           .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,`${suffix}.webp`)}`)
           .catch(error => console.error(error))
