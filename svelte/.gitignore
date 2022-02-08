@@ -11,3 +11,4 @@ node_modules
 
 # Formatted images
 static/formatted-images
+formatImages.cjs
