@@ -25,6 +25,7 @@
         height={height || ($media.small ? "400" : "300")}
         width={width || ($media.small ? "800" : $media.xSmall ? "600" : "440")}
         style="background-size: cover;background-image: url({`${imageSrc}-placeholder.webp`});"
+        data-test-id="placeholder-image"
       />
   </picture>
 </div>

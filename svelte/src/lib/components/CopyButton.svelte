@@ -7,7 +7,7 @@
 
   const copy = (text: string): void => {
     if (browser) {
-      navigator.clipboard.writeText(text).then(
+      navigator.clipboard?.writeText(text).then(
         () => dispatch("copy", text),
         () => dispatch("fail")
       );
