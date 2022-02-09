@@ -70,7 +70,7 @@ const resizeImages = async (type: string) => {
           .toFormat(format)
           .resize(dimensions)
           .webp({ quality: quality })
-          .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,`${suffix}.webp`)}`)
+          .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,`${suffix}.${format}`)}`)
           .catch(error => console.error(error))
       }
       formatImage(wideResizeObject, 100);
