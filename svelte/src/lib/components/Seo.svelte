@@ -1,34 +1,37 @@
-
 <script lang="ts">
-  export let title: string;
-  export let description: string;
-  export let isArticle = false;
-  export let category = "";
-  export let image = "";
-  export let published = "";
-  export let tags = [""];
-  export let url = "";
+  export let title: string
+  export let description: string
+  export let isArticle = false
+  export let category = ''
+  export let image = ''
+  export let published = ''
+  export let tags = ['']
+  export let url = ''
 
-  let imageUrl = isArticle ? `https://collier.cz/formatted-images/heroes/${image}-social.png` : `https://collier.cz/avatar.png`
-  let publishedDate = isArticle ? new Date(published).toISOString() : new Date().toISOString()
+  let imageUrl = isArticle
+    ? `https://collier.cz/formatted-images/heroes/${image}-social.png`
+    : `https://collier.cz/avatar.png`
+  let publishedDate = isArticle
+    ? new Date(published).toISOString()
+    : new Date().toISOString()
 
   /* Structured data for SEO */
   const aaronObject = {
-    "@type": "Person",
-    name: "Aaron Collier",
-    image: "https://collier.cz/formatted-images/originals/avatar.webp",
-    url: "https://collier.cz",
+    '@type': 'Person',
+    name: 'Aaron Collier',
+    image: 'https://collier.cz/formatted-images/originals/avatar.webp',
+    url: 'https://collier.cz',
   }
 
   let getJsonLd = () => {
     if (isArticle) {
       return {
-        "@context": "http://schema.org",
-        "@type": "BlogPosting",
+        '@context': 'http://schema.org',
+        '@type': 'BlogPosting',
         url: url,
         headline: title,
         image: {
-          "@type": "ImageObject",
+          '@type': 'ImageObject',
           url: imageUrl,
         },
         description,
@@ -38,12 +41,12 @@
       }
     }
     return {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
+      '@context': 'http://schema.org',
+      '@type': 'WebSite',
       url: url,
       name: title,
-    };
-  };
+    }
+  }
 
   let jsonLdString = JSON.stringify(getJsonLd())
 
@@ -51,11 +54,11 @@
 		<script type="application/ld+json">
 			${jsonLdString}
 		${'<'}/script>
-	`;
+	`
 </script>
 
 <svelte:head>
-  <link rel="canonical" href="{url}" />
+  <link rel="canonical" href={url} />
   {@html jsonLdScript}
 
   <meta property="og:site_name" content="Aaron Collier" />
@@ -66,8 +69,8 @@
   <meta property="og:description" content={description} />
   <meta property="og:image" content={imageUrl} />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content={isArticle ? "800" : "400"} />
-  <meta property="og:image:height" content={isArticle ? "264" : "400"} />
+  <meta property="og:image:width" content={isArticle ? '800' : '400'} />
+  <meta property="og:image:height" content={isArticle ? '264' : '400'} />
   {#if isArticle}
     <meta property="article:author" content="Aaron Collier" />
     <meta property="article:section" content={category} />

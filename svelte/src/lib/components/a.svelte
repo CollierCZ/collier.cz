@@ -1,6 +1,6 @@
 <script lang="ts">
-  export let rel = '';
-  export let href: string;
+  export let rel = ''
+  export let href: string
 </script>
 
-<a {href} rel={rel ? "noopener" : ""} class="font-semibold"><slot /></a>
+<a {href} rel={rel ? 'noopener' : ''} class="font-semibold"><slot /></a>

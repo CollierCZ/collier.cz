@@ -1,27 +1,21 @@
 const config = {
-  testEnvironment: "jsdom",
+  testEnvironment: 'jsdom',
   transform: {
-    "^.+\\.js$": "babel-jest",
-    "^.+\\.ts$": "ts-jest",
-    "^.+\\.svelte$": [
-      "svelte-jester",
+    '^.+\\.js$': 'babel-jest',
+    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.svelte$': [
+      'svelte-jester',
       {
-        preprocess: true
-      }
-    ]
+        preprocess: true,
+      },
+    ],
   },
-  moduleFileExtensions: [
-    "ts",
-    "js",
-    "svelte"
-  ],
-  setupFilesAfterEnv: [
-    "@testing-library/jest-dom/extend-expect"
-  ],
+  moduleFileExtensions: ['ts', 'js', 'svelte'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   moduleNameMapper: {
-    "^\\$lib(.*)$": "<rootDir>/src/lib$1",
-    "^\\$app(.*)$": "<rootDir>/.svelte-kit/runtime/app$1"
-  }
+    '^\\$lib(.*)$': '<rootDir>/src/lib$1',
+    '^\\$app(.*)$': '<rootDir>/.svelte-kit/runtime/app$1',
+  },
 }
 
-module.exports = config;
+module.exports = config

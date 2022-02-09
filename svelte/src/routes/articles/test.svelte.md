@@ -23,7 +23,7 @@ This is long text to provide for a long paragraph.
 
 ```javascript
 if (3 > 5) {
-  console.log("yes")
+  console.log('yes')
 }
-console.log("no")
+console.log('no')
 ```

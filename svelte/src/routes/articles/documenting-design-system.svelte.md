@@ -103,25 +103,29 @@ It would be harder for them to know why, how, and when to use the components.
 
 What is needed beyond just the components themselves:
 
-* Standards 📋
+- Standards 📋
 
   These help ensure everything works well.
   It includes ideas like accessibility so everyone can get the benefit of your great designs.
   It's also ideas like how and when to use the components
   to maximize their effectiveness and minimize confusion.
-* Patterns 🏁
+
+- Patterns 🏁
 
   Patterns weave things together, such as various input components to make a form.
   They're ways to approach specific tasks, such as [handling errors in forms](https://orbit.kiwi/design-patterns/form-errors/).
-* Processes 🔀
+
+- Processes 🔀
 
   This helps get the entire team working in the same direction.
   It means people can focus on working collaboratively and not get lost in the details.
-* Guidance 🦮
+
+- Guidance 🦮
 
   People need to know how to use your components and patterns.
   They also need to know how to contribute to your system and keep it working smoothly for everyone.
-* Reasons for decisions 🧠
+
+- Reasons for decisions 🧠
 
   You want to include reasons for your decisions so you don't have to repeat the discussions next year.
   By that time, even you will have forgotten why the padding is like it is.
@@ -321,7 +325,6 @@ The goal in each case is to get people to the work they want to do, using the de
 
 <Image name="documenting-design-system/Orbit-home" alt="Orbit docs homepage" />
 <Image name="documenting-design-system/Orbit-component" alt="A Badge component in the Orbit docs" />
-
 
 Then you need to use your design wizardry to make the entire experience feel like part of a coherent whole.
 
