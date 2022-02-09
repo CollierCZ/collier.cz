@@ -1,13 +1,17 @@
 <script lang="ts">
-  import { page } from '$app/stores';
-  export let title = "Aaron Collier";
+  import { page } from '$app/stores'
+  export let title = 'Aaron Collier'
 </script>
 
 <header>
-  <nav class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg px-4 pt-4">
+  <nav
+    class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg px-4 pt-4"
+  >
     <div class="flex-1">
       {#if $page.url.pathname !== '/'}
-        <a sveltekit:prefetch href="/" class="hover:underline focus:underline">← Home</a>
+        <a sveltekit:prefetch href="/" class="hover:underline focus:underline"
+          >← Home</a
+        >
       {/if}
     </div>
     <a sveltekit:prefetch href="/">
@@ -19,7 +23,7 @@
         width={56}
       />
     </a>
-    <div class="flex-1"></div>
+    <div class="flex-1" />
   </nav>
 </header>
 

@@ -40,13 +40,13 @@ I'll take a look at some problems we faced at [Kentico Kontent](https://kontent.
 
 ## Common daily work
 
-* We had most features documented
-* We spent our time:
-  * Tracking changes
-  * Updating existing docs to reflect changes
-  * Adding in docs on new features
-* Most input was from developers
-* Maintaining knowns
+- We had most features documented
+- We spent our time:
+  - Tracking changes
+  - Updating existing docs to reflect changes
+  - Adding in docs on new features
+- Most input was from developers
+- Maintaining knowns
 
 Most of our work involved things from inside our own circle.
 We spent our time primarily within the company, building on ideas from developers and others who know our product really, really well.
@@ -55,11 +55,11 @@ what we were trying to achieve, what our tool expects, and how we can expect it 
 
 ## Uncommon daily work
 
-* Processing user feedback/speaking with users
-* Reworking existing docs unprompted
-* Relearning how to work with the product
-* Working with our product outside our own context
-* Other perspectives
+- Processing user feedback/speaking with users
+- Reworking existing docs unprompted
+- Relearning how to work with the product
+- Working with our product outside our own context
+- Other perspectives
 
 We didn't spend a lot of time with ideas from outside our sphere.
 We like feedback on our docs, but we rarely get much that's constructive.
@@ -125,7 +125,7 @@ Now that we had a lot of information, we had to organize it into a useful form.
 
 ### Create personas
 
-We borrowed another concept from UX, namely [personas](https://en.wikipedia.org/wiki/Persona_(user_experience)).
+We borrowed another concept from UX, namely [personas](<https://en.wikipedia.org/wiki/Persona_(user_experience)>).
 These are ways to categorize our users into groups based on things they have in common.
 This helped us process the info we have on our readers so that we didn't have to deal with all the data at once.
 We then gave each group a name and a face so we could relate to the people better.
@@ -186,25 +186,29 @@ This led to us discovering some things that were useful about our docs.
 
 From looking at our docs through Esmeralda's eyes, we can see a few things:
 
-* She's unhappy before she gets to us:
+- She's unhappy before she gets to us:
 
   The reason she comes to the docs is because of a problem, so she already has negative feelings.
-* She doesn't read our starter tutorials:
+
+- She doesn't read our starter tutorials:
 
   Although we've created [some nice starter tutorials](https://docs.kontent.ai/tutorials/develop-apps)
   to introduce concepts and get people up and running, she doesn't care about them and doesn't read them.
   She heads straight for the first page.
-* Every page can be the first page:
+
+- Every page can be the first page:
 
   This is a concept we knew from [a great book on the subject](https://everypageispageone.com/the-book/),
   but it was good to see it in practice, even though it meant we hadn't made use of its message in our docs.
-* Our examples didn't mention our SDKs:
-  
+
+- Our examples didn't mention our SDKs:
+
   This is an example of us not putting it into practice.
   We didn't mention the SDKs we have for each technology in our examples for that tech.
   So people might come to an example and see syntax for a package they don't have or know about.
   That can create confusion.
-* The ability to try endpoints wasn't clear:
+
+- The ability to try endpoints wasn't clear:
 
   We had a button to try things in the docs directly,
   but the color blended into the background.
@@ -224,36 +228,40 @@ He does a lot less of trying to implement specific features than Esmeralda did.
 
 From looking at our docs through Luke's eyes, we can see a few things:
 
-* Tables can be ugly:
+- Tables can be ugly:
 
   Our API introduction started with a table of all our APIs.
   That wasn't a good sight and it wasn't even necessary for the info we had there.
-* The first example was too complex:
+
+- The first example was too complex:
 
   The first example was trying to show a lot of different things at once.
   The basic call for content and also filtering, paging, and so on.
   This was too much for an evaluator to grasp at one time.
-* The ability to try endpoints wasn't clear:
+
+- The ability to try endpoints wasn't clear:
 
   As with Esmeralda, we saw this again.
-* Specific docs are hard to find with alternate terminology:
+
+- Specific docs are hard to find with alternate terminology:
 
   We wrote our docs to match the terms we used in Kentico Kontent.
   There's a lot to be said for the approach of consistency,
   but it makes it harder for people to find the docs they want when they're searching using the terms they use in their everyday lives.
-* Multiple locations for docs isn't ideal:
+
+- Multiple locations for docs isn't ideal:
 
   For various historical reasons, we had separate places with docs, including a strict division between technical and nontechnical help.
   This made sense at the time, but it made it hard to deliver a consistent help experience that people would understand.
 
 #### What we did for Esmeralda and Luke
 
-* Made the *Try it* button more visible
-* Removed the table
-* Simplified the first example and made it more educational
-* Tried to make examples consistent
-* Created tasks for finding and implementing users’ terms
-* Long-term project of migration to a single portal
+- Made the _Try it_ button more visible
+- Removed the table
+- Simplified the first example and made it more educational
+- Tried to make examples consistent
+- Created tasks for finding and implementing users’ terms
+- Long-term project of migration to a single portal
 
 We tried to take the things we learned from these experiences
 and translate them into actions that would improve their feelings on our next map.
@@ -288,9 +296,9 @@ you can see that she might leave feeling bad about our docs.
 
 #### What we did for Casey
 
-* Make all articles start positively
-* Created more nontechnical articles for technical concepts
-* Created tasks for teaching people to set up environments
+- Make all articles start positively
+- Created more nontechnical articles for technical concepts
+- Created tasks for teaching people to set up environments
 
 We tried to address some of these insights firstly by lifting Casey's spirits when she comes to the docs.
 That meant starting with what is possible before getting into what isn't possible.

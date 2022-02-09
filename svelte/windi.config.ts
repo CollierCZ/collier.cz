@@ -3,9 +3,7 @@ import colors from 'windicss/colors'
 
 export default defineConfig({
   darkMode: 'class', // or 'media'
-  plugins: [
-    require('windicss/plugin/typography'),
-  ],
+  plugins: [require('windicss/plugin/typography')],
   theme: {
     extend: {
       backgroundColor: {
@@ -48,9 +46,9 @@ export default defineConfig({
             a: {
               fontWeight: 'inherit',
             },
-          }
-        }
+          },
+        },
       },
-    }
+    },
   },
 })

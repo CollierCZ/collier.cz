@@ -6,27 +6,27 @@ type: 'nodejs:16'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
-    build: |
-        set -e
-        npm run format:images
-        npm run build
+  build: |
+    set -e
+    npm run format:images
+    npm run build
 
 # The size of the persistent disk of the application (in MB).
 disk: 1024
 
 web:
-    # Site is static, so don't waste resources
-    commands:
-        start: sleep infinity
-    locations:
-        '/':
-            # The public directory of the application relative to its root.
-            root: 'build'
-            passthru: true
-            index: ['index.html']
-            scripts: false
-            allow: true
-            expires: 24h
-            rules:
-                \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|cast|mp4|json|yaml|ico|svg?|cast|mp4|json|yaml|svg?|ttf)$:
-                    expires: 4w
+  # Site is static, so don't waste resources
+  commands:
+    start: sleep infinity
+  locations:
+    '/':
+      # The public directory of the application relative to its root.
+      root: 'build'
+      passthru: true
+      index: ['index.html']
+      scripts: false
+      allow: true
+      expires: 24h
+      rules:
+        \.(css|js|gif|jpe?g|png|ttf|eot|woff2?|otf|cast|mp4|json|yaml|ico|svg?|cast|mp4|json|yaml|svg?|ttf)$:
+          expires: 4w
