@@ -5,8 +5,10 @@
   export let category = ''
   export let image = ''
   export let published = ''
+  export let slug = ''
   export let tags = ['']
-  export let url = ''
+
+  let fullUrl = `https://collier.cz${slug}`
 
   let imageUrl = isArticle
     ? `https://collier.cz/formatted-images/heroes/${image}-social.png`
@@ -28,7 +30,7 @@
       return {
         '@context': 'http://schema.org',
         '@type': 'BlogPosting',
-        url: url,
+        url: fullUrl,
         headline: title,
         image: {
           '@type': 'ImageObject',
@@ -43,7 +45,7 @@
     return {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: url,
+      url: fullUrl,
       name: title,
     }
   }
@@ -58,12 +60,12 @@
 </script>
 
 <svelte:head>
-  <link rel="canonical" href={url} />
+  <link rel="canonical" href={fullUrl} />
   {@html jsonLdScript}
 
   <meta property="og:site_name" content="Aaron Collier" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:url" content={url} />
+  <meta property="og:url" content={fullUrl} />
   <meta property="og:type" content={isArticle ? 'article' : 'website'} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />

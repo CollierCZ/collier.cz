@@ -13,11 +13,13 @@
   export let tags = ['']
   export let title = ''
   import Seo from '$lib/components/Seo.svelte'
+
+  import { page } from '$app/stores'
 </script>
 
 <Seo
   isArticle={true}
-  url={``}
+  slug={$page.url.pathname}
   {title}
   {description}
   image={heroImage}
