@@ -9,8 +9,8 @@
   export let tags = [""];
   export let url = "";
 
-  let imageUrl = isArticle ? `https://collier.cz/formatted-images/heroes/${image}.webp` : `https://collier.cz/formatted-images/originals/avatar.webp`
-  let publishedDate = isArticle ? new Date(published).toString() : new Date().toString()
+  let imageUrl = isArticle ? `https://collier.cz/formatted-images/heroes/${image}-social.png` : `https://collier.cz/formatted-images/originals/avatar.webp`
+  let publishedDate = isArticle ? new Date(published).toISOString() : new Date().toISOString()
 
   /* Structured data for SEO */
   const aaronObject = {

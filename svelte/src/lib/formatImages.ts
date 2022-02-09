@@ -1,5 +1,5 @@
 import path from 'path';
-import sharp from 'sharp';
+import sharp, { FormatEnum } from 'sharp';
 import { readdir } from 'fs/promises';
 import { existsSync, mkdirSync, statSync } from 'fs';
 
@@ -65,9 +65,9 @@ const resizeImages = async (type: string) => {
         width: number
         height?: number
       }
-      const formatImage = (dimensions: DimentionsObject, quality = 80, suffix = '') => {
+      const formatImage = (dimensions: DimentionsObject, quality = 80, suffix = '', format: keyof FormatEnum = 'webp') => {
         sharp(`${inputDirectory}/${file}`)
-          .toFormat('webp')
+          .toFormat(format)
           .resize(dimensions)
           .webp({ quality: quality })
           .toFile(`${outputDirectory}/${file.replace(/\.[a-zA-Z]*$/,`${suffix}.webp`)}`)
@@ -79,6 +79,7 @@ const resizeImages = async (type: string) => {
       formatImage(wideResizeObject, 100, "-placeholder");
       if (type === "heroes") {
         formatImage(squareResizeObject, 100, "-square");
+        formatImage(wideResizeObject, 100, "-social", "png");
       }
     }
     for (const file of files) {
