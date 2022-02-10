@@ -63,6 +63,8 @@
   <link rel="canonical" href={fullUrl} />
   {@html jsonLdScript}
 
+  <meta name="description" content={description} />
+
   <meta property="og:site_name" content="Aaron Collier" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content={fullUrl} />
@@ -70,7 +72,6 @@
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={imageUrl} />
-  <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content={isArticle ? '800' : '400'} />
   <meta property="og:image:height" content={isArticle ? '264' : '400'} />
   {#if isArticle}
