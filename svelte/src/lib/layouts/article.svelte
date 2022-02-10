@@ -15,6 +15,7 @@
   import Seo from '$lib/components/Seo.svelte'
 
   import { page } from '$app/stores'
+  import { media } from '$lib/mediaQueries'
 </script>
 
 <Seo
@@ -35,7 +36,27 @@
 {/if}
 
 {#if heroImage}
-  <svelte:component this={Image} name={heroImage} hero height="264" />
+  <svelte:component
+    this={Image}
+    name={heroImage}
+    hero
+    height={$media.xXLarge
+      ? 452
+      : $media.large
+      ? 452
+      : $media.small
+      ? 352
+      : $media.xSmall
+      ? 260
+      : 132}
+    width={$media.large
+      ? '1050'
+      : $media.small
+      ? '800'
+      : $media.xSmall
+      ? '600'
+      : '440'}
+  />
 {/if}
 
 <!-- Article content -->

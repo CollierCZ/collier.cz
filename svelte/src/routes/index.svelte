@@ -33,16 +33,20 @@
 
   import ArticleCard from '$lib/components/ArticleCard.svelte'
   import Image from '$lib/components/Image.svelte'
+  import { media } from '$lib/mediaQueries'
 
   export let articles: Array<ArticleMetadata>
 </script>
 
-<Seo url="https://collier.cz" title="Aaron Collier" description="" />
+<Seo
+  title="Aaron Collier"
+  description="Articles by Aaron Collier on technology and education."
+/>
 
 <aside
   class="text-center items-center justify-center max-w-xs sm:max-w-80ch mx-auto sm:mx-0 my-8 sm:flex sm:text-left"
 >
-  <div class="sm:pl-8 prose lg:prose-lg sm:order-2">
+  <div class="sm:pl-8 prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:order-2">
     <h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
     <p>
       Originally from Lexington and now residing in Brno, I'm an educator,
@@ -53,17 +57,23 @@
     </p>
     <div>
       <a class="pr-2" href="https://github.com/CollierCZ"
-        ><Icon data={github} scale={2} label="GitHub" /></a
+        ><Icon data={github} scale={$media.large ? 3 : 2} label="GitHub" /></a
       >
       <a href="mailto:aaron@collier.cz"
-        ><Icon data={envelopeSquare} scale={2} label="Email" /></a
+        ><Icon
+          data={envelopeSquare}
+          scale={$media.large ? 3 : 2}
+          label="Email"
+        /></a
       >
       <a class="pl-2" target="_self" href="/rss.xml"
-        ><Icon data={rssSquare} scale={2} label="RSS" /></a
+        ><Icon data={rssSquare} scale={$media.large ? 3 : 2} label="RSS" /></a
       >
     </div>
   </div>
-  <div class="sm:order-1 w-auto sm:w-42 sm:flex-shrink-0 lg:w-48 mx-auto">
+  <div
+    class="sm:order-1 w-auto sm:w-42 sm:flex-shrink-0 lg:w-52 xl:w-58 2xl:w-64 mx-auto"
+  >
     <Image name="avatar" hero original />
   </div>
 </aside>

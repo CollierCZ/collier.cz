@@ -16,8 +16,18 @@ const resizeImages = async (type: string) => {
   const wideResizeObject =
     type === 'heroes'
       ? {
+          width: 1050,
+          height: 462,
+        }
+      : {
+          width: 1050,
+        }
+
+  const largeResizeObject =
+    type === 'heroes'
+      ? {
           width: 800,
-          height: 264,
+          height: 352,
         }
       : {
           width: 800,
@@ -27,7 +37,7 @@ const resizeImages = async (type: string) => {
     type === 'heroes'
       ? {
           width: 500,
-          height: 264,
+          height: 220,
         }
       : {
           width: 500,
@@ -94,10 +104,11 @@ const resizeImages = async (type: string) => {
           )
           .catch((error) => console.error(error))
       }
-      formatImage(wideResizeObject, 100)
+      formatImage(wideResizeObject, 100, '-wide')
+      formatImage(largeResizeObject, 80)
       formatImage(mediumResizeObject, 80, '-medium')
       formatImage(narrowResizedObject, 80, '-narrow')
-      formatImage(wideResizeObject, 100, '-placeholder')
+      formatImage(wideResizeObject, 1, '-placeholder')
       if (type === 'heroes') {
         formatImage(squareResizeObject, 100, '-square')
         formatImage(wideResizeObject, 100, '-social', 'png')

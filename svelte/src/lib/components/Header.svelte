@@ -5,7 +5,7 @@
 
 <header>
   <nav
-    class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg px-4 pt-4"
+    class="flex justify-center items-center mx-auto max-w-80ch lg:text-lg xl:text-xl 2xl:text-2xl px-4 pt-4"
   >
     <div class="flex-1">
       {#if $page.url.pathname !== '/'}
