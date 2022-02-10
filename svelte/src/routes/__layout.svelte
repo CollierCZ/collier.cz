@@ -6,7 +6,7 @@
 <Header />
 
 <main class="flex justify-center pb-8 font-sans">
-  <div class="max-w-80ch pt-8 px-4 prose lg:prose-lg">
+  <div class="max-w-80ch pt-8 px-4 prose lg:prose-lg xl:prose-xl 2xl:prose-2xl">
     <slot />
   </div>
 </main>

@@ -15,8 +15,8 @@
 <div class={!hero && $media.medium ? 'px-8' : ''}>
   <picture>
     <source
-      srcset={`${imageSrc}-narrow.webp 300w, ${imageSrc}-medium.webp 500w, ${imageSrc}.webp 800w`}
-      sizes="(min-width: 480px) 500px, (min-width: 768px) 800px, 300px"
+      srcset={`${imageSrc}-narrow.webp 300w, ${imageSrc}-medium.webp 500w, ${imageSrc}.webp 800w, ${imageSrc}-wide.webp 1050w`}
+      sizes="(min-width: 480px) 500px, (min-width: 768px) 800px, (min-width: 1024px) 1050px, 300px"
     />
     <img
       class="p-0"
