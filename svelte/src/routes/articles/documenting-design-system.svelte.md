@@ -350,19 +350,19 @@ Thanks to the wonderful team at Orbit who helped put the docs site together:
 
 <div style="display: flex; align-items:center; flex-wrap: wrap;">
   <div style="display:flex; align-items:center;">
-    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/acf6fe77e21ee15fe896a2f17209f803/6ba37/will.png" alt="" width="60px" /> Will Kolmačka
+    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/acf6fe77e21ee15fe896a2f17209f803/6ba37/will.png" alt="" width="60px" height="60px" /> Will Kolmačka
   </div>
   <div style="display:flex; align-items:center;">
-    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/a4ab49774841a0a2631560be19118988/fd013/milan.jpg" alt="" width="60px" /> Milan Seitler
+    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/a4ab49774841a0a2631560be19118988/fd013/milan.jpg" alt="" width="60px" height="60px" /> Milan Seitler
   </div>
   <div style="display:flex; align-items:center;">
-    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/e9b7ffd5b4562ddf7550f774d5071e11/89b9c/silvenon.jpg" alt="" width="60px" /> Matija Marohnić
+    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/e9b7ffd5b4562ddf7550f774d5071e11/89b9c/silvenon.jpg" alt="" width="60px" height="60px" /> Matija Marohnić
   </div>
   <div style="display:flex; align-items:center;">
-    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/ca01193dbf7d173e17d39366de23f6f3/83d6a/viktr.png" alt="" width="60px" /> Victor Genaev
+    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/ca01193dbf7d173e17d39366de23f6f3/83d6a/viktr.png" alt="" width="60px" height="60px" /> Victor Genaev
   </div>
   <div style="display:flex; align-items:center;">
-    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/839e7dbc35f4ad250b0275d5c3d38b5a/89b9c/vepor.jpg" alt="" width="60px" /> Luděk Vepřek
+    <img style="margin: 0.5em;" src="https://orbit.kiwi/static/839e7dbc35f4ad250b0275d5c3d38b5a/89b9c/vepor.jpg" alt="" width="60px" height="60px" /> Luděk Vepřek
   </div>
 </div>
 
