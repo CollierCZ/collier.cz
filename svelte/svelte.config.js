@@ -34,10 +34,10 @@ const config = {
   ],
   kit: {
     adapter: adapter(),
+    prerender: {
+      default: true
+    },
     trailingSlash: 'ignore',
-
-    // hydrate the <div id="svelte"> element in src/app.html
-    target: '#svelte',
 
     vite: {
       plugins: [
