@@ -12,6 +12,9 @@ export default defineConfig({
       fontSize: {
         base: ['16px', '24px'],
       },
+      screens: {
+        '2xl': { min: '1900px' },
+      },
       typography: {
         DEFAULT: {
           css: {
