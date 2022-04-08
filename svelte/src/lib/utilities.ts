@@ -1,5 +1,5 @@
 import type { ArticleMetadata } from '../routes/articles.json'
-import type { fetch } from '@sveltejs/kit/install-fetch'
+import type nodeFetch from './types/nodeFetch'
 
 export const sortArticles = (
   articlesToSort: ArticleMetadata[],
@@ -11,7 +11,7 @@ export const sortArticles = (
   )
 
 export const getArticles = async (
-  fetch?: fetch,
+  fetch?: typeof nodeFetch,
 ): Promise<ArticleMetadata[]> => {
   try {
     const result = await fetch(`/articles.json`)

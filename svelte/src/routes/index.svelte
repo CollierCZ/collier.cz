@@ -1,6 +1,6 @@
 <script context="module" lang="ts">
   import type { ArticleMetadata } from './articles.json'
-  import type { fetch } from '@sveltejs/kit/install-fetch'
+  import type nodeFetch from '$lib/types/nodeFetch'
   import { getArticles } from '$lib/utilities'
   import Seo from '$lib/components/Seo.svelte'
 
@@ -10,10 +10,11 @@
     props?: {
       articles: ArticleMetadata[]
     }
+    error?: string
   }
 
   interface loadProps {
-    fetch: fetch
+    fetch: typeof nodeFetch
   }
 
   export async function load({ fetch }: loadProps): Promise<ArticleProps> {
