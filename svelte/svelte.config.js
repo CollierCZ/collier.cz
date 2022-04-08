@@ -37,7 +37,7 @@ const config = {
     prerender: {
       default: true
     },
-    trailingSlash: 'ignore',
+    trailingSlash: 'always',
 
     vite: {
       plugins: [
