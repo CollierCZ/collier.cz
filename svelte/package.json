@@ -1,6 +1,6 @@
 {
-  "name": "svelte",
-  "version": "0.0.1",
+  "name": "collier.cz",
+  "version": "0.1.0",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
