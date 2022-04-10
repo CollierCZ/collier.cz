@@ -1,6 +1,6 @@
 import type { ArticleMetadata } from '../routes/articles.json'
 import type { ArticleProps } from '../routes/index.svelte'
-import type { fetch } from '@sveltejs/kit/install-fetch'
+import type nodeFetch from '$lib/types/nodeFetch'
 import { getArticles } from '$lib/utilities'
 
 type CategoryOrTag = 'category' | 'tag'
@@ -11,12 +11,12 @@ interface ArticleParameters {
 }
 
 export interface LoadProps {
-  fetch: fetch
+  fetch: typeof nodeFetch
   params: ArticleParameters
 }
 
 export const filterArticles = async (
-  fetch: fetch,
+  fetch: typeof nodeFetch,
   params: ArticleParameters,
   type: CategoryOrTag,
 ): Promise<ArticleProps> => {

@@ -1,5 +1,6 @@
 import path from 'path'
-import sharp, { FormatEnum } from 'sharp'
+import sharp from 'sharp'
+import type { FormatEnum } from 'sharp'
 import { readdir } from 'fs/promises'
 import { existsSync, mkdirSync, statSync } from 'fs'
 
