@@ -39,6 +39,15 @@
   export let articles: Array<ArticleMetadata>
 </script>
 
+<svelte:head>
+  <link
+    rel="sitemap"
+    type="application/xml"
+    title="Sitemap"
+    href="../sitemap.xml"
+  />
+</svelte:head>
+
 <Seo
   title="Aaron Collier"
   description="Articles by Aaron Collier on technology and education."
@@ -51,7 +60,8 @@
     <h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
     <p>
       Originally from Lexington and now residing in Brno, I'm an educator,
-      editor, and elucidator. <a
+      editor, and elucidator.
+      <a
         href="/about-me/"
         class="underline hover:no-underline focus:no-underline">More about me</a
       >.
