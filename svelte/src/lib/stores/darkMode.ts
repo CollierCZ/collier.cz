@@ -12,7 +12,7 @@ const getOsPreference = () => {
 
 const defaultValue = null;
 
-const getStoredValue = () => {
+export const getStoredValue = () => {
   if (browser) {
     // If preference stored in browser
     if (localStorage.getItem('darkMode')) {
@@ -33,6 +33,16 @@ const getStoredValue = () => {
 }
 
 export const darkMode = writable<boolean | null>(getStoredValue());
+
+const checkForPreference = () => {
+  if (browser) {
+    if (localStorage.getItem('darkMode')) return true
+    return false
+  }
+  return false
+}
+
+export const isPreferenceSet = writable<boolean>(checkForPreference());
 
 darkMode.subscribe((value) => {
   if (browser && value !== null) {

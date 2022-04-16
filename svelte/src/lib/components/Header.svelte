@@ -24,7 +24,7 @@
         width={56}
       />
     </a>
-    <div class="flex-1 text-right">
+    <div class="flex-1">
       <DarkModeToggle />
     </div>
   </nav>
