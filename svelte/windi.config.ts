@@ -77,7 +77,23 @@ const colors = {
 
 export default defineConfig({
   darkMode: 'class', // or 'media'
-  plugins: [require('windicss/plugin/typography')],
+  plugins: [
+    require('windicss/plugin/typography'),
+    require("@windicss/plugin-heropatterns")({
+      // the patterns to use: https://heropatterns.com/
+      patterns: ["topography"],
+    
+      // The foreground colors of the pattern
+      colors: {
+        default: colors.green[50],
+      },
+    
+      // The foreground opacity
+      opacity: {
+        default: "1.0"
+      }
+    })
+  ],
   theme: {
     extend: {
       colors: colors,
