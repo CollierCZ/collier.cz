@@ -6,7 +6,7 @@
   export let html: string
 </script>
 
-<div class="rounded-md bg-codeBlockNord">
+<div class="rounded-md bg-codeBlockNord code-block-wrapper">
   <div
     class="flex {lang
       ? 'justify-between'
