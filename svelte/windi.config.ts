@@ -119,6 +119,9 @@ export default defineConfig({
             em: {
               color: 'inherit',
             },
+            code: {
+              color: 'inherit',
+            }
           },
         },
         lg: {
