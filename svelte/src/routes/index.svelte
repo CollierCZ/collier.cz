@@ -56,7 +56,9 @@
 <aside
   class="text-center items-center justify-center max-w-xs sm:max-w-80ch mx-auto sm:mx-0 my-8 sm:flex sm:text-left"
 >
-  <div class="sm:pl-8 prose lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:order-2">
+  <div
+    class="sm:pl-8 prose dark:prose-dark lg:prose-lg xl:prose-xl 2xl:prose-2xl sm:order-2"
+  >
     <h1 class="text-3xl font-extrabold leading-relaxed">Aaron Collier</h1>
     <p>
       Originally from Lexington and now residing in Brno, I'm an educator,

@@ -4,7 +4,7 @@
   const publishedDate = new Date(date)
 </script>
 
-<div class="font-light mt-0">
+<div class="font-light dark:text-sky-50 mt-0">
   Published <time datetime={date}
     >{new Intl.DateTimeFormat('en-GB', {
       day: 'numeric',
