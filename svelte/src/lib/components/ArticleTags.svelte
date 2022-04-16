@@ -10,7 +10,7 @@
       <div
         class="mr-1 mt-2 rounded-md bg-green-50 hover:bg-fuchsia-5 px-1 py-1.5"
       >
-        <a sveltekit:prefetch class="px-2 py-20 not-prose" href="/tag/{tag}/"
+        <a sveltekit:prefetch class="px-2 py-3 not-prose" href="/tag/{tag}/"
           >{tag}</a
         >
       </div>
