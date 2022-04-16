@@ -2,7 +2,6 @@
   import { page } from '$app/stores'
   import DarkModeToggle from './DarkModeToggle.svelte'
   export let title = 'Aaron Collier'
-  export let darkMode
 </script>
 
 <header>
@@ -26,7 +25,7 @@
       />
     </a>
     <div class="flex-1 text-right">
-      <DarkModeToggle bind:enabled={darkMode} />
+      <DarkModeToggle />
     </div>
   </nav>
 </header>

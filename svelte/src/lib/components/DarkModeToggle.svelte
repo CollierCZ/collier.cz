@@ -1,15 +1,20 @@
 <script lang="ts">
-  export let enabled: boolean
-  const toggleDarkMode = () => (enabled = !enabled)
-
+  import darkMode from '$lib/stores/darkMode'
+  const toggleDarkMode = () => {
+    darkMode.set(!$darkMode)
+  }
   import Icon from 'svelte-awesome'
   import { lightbulbO, moonO } from 'svelte-awesome/icons'
 </script>
 
-<button role="switch" aria-checked={enabled} on:click={() => toggleDarkMode()}>
+<button
+  role="switch"
+  aria-checked={$darkMode}
+  on:click={() => toggleDarkMode()}
+>
   <Icon
-    data={enabled ? lightbulbO : moonO}
+    data={$darkMode ? lightbulbO : moonO}
     scale={2}
-    label={enabled ? 'Dark mode' : 'Light mode'}
+    label={$darkMode ? 'Dark mode' : 'Light mode'}
   />
 </button>

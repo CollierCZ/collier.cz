@@ -1,12 +1,12 @@
 <script lang="ts">
+  import darkMode from '$lib/stores/darkMode'
   import Header from '$lib/components/Header.svelte'
   import 'virtual:windi.css'
-  export let dark = true
 </script>
 
-<div class:dark>
+<div class={$darkMode ? 'dark' : ''}>
   <div class="h-full min-h-screen dark:bg-dark-500 dark:text-white">
-    <Header bind:darkMode={dark} />
+    <Header />
 
     <main class="flex justify-center pb-8 font-sans">
       <div
