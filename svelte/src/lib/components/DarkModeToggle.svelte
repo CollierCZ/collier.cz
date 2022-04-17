@@ -29,7 +29,7 @@
 
   <button
     role="switch"
-    aria-checked={$darkMode}
+    aria-checked={$darkMode || false}
     aria-label="Dark mode"
     id="Dark mode toggle"
     on:click={() => toggleDarkMode()}
