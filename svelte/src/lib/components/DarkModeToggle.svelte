@@ -13,8 +13,12 @@
     darkMode.set(getStoredValue())
     isPreferenceSet.set(false)
   }
-  import Icon from 'svelte-awesome'
-  import { lightbulbO, moonO } from 'svelte-awesome/icons'
+
+  import WeatherSunny from 'svelte-material-icons/WeatherSunny.svelte'
+  import WeatherNight from 'svelte-material-icons/WeatherNight.svelte'
+
+  let height = '100%'
+  let width = height
 </script>
 
 <div class="flex justify-end align-middle">
@@ -35,12 +39,16 @@
     on:click={() => toggleDarkMode()}
     class="w-16 h-10 ml-2 bg-green-100 rounded-3xl p-1 dark:text-gray-700"
   >
-    <Icon
-      data={$darkMode ? moonO : lightbulbO}
-      scale={1.5}
-      class="bg-white rounded-1/2 h-8 w-8 p-1 relative transition-left duration-500 {$darkMode
-        ? 'left-2'
-        : '-left-2'}"
-    />
+    <div
+      class={`bg-white rounded-1/2 h-8 w-8 p-1 relative transition-left duration-500 ${
+        $darkMode ? 'left-6' : 'left-0'
+      }`}
+    >
+      {#if $darkMode}
+        <WeatherNight {height} {width} />
+      {:else}
+        <WeatherSunny {height} {width} />
+      {/if}
+    </div>
   </button>
 </div>

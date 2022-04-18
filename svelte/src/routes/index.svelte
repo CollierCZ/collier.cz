@@ -29,13 +29,7 @@
 </script>
 
 <script lang="ts">
-  import Icon from 'svelte-awesome'
-  import { envelopeSquare, github, rssSquare } from 'svelte-awesome/icons'
-
   import ArticleCard from '$lib/components/ArticleCard.svelte'
-  import Image from '$lib/components/Image.svelte'
-  import { media } from '$lib/mediaQueries'
-
   export let articles: Array<ArticleMetadata>
 </script>
 

@@ -11,10 +11,14 @@ tags:
 
 <script lang="ts">
   import Image from "$lib/components/Image.svelte"
-  import Icon from "svelte-awesome"
-  import { apple, android } from "svelte-awesome/icons"
+  import Apple from 'svelte-material-icons/Apple.svelte'
+  import Android from 'svelte-material-icons/Android.svelte'
+  import React from 'svelte-material-icons/React.svelte'
   import { faFigma } from "@fortawesome/free-brands-svg-icons/faFigma"
-  import { faReact } from "@fortawesome/free-brands-svg-icons/faReact"
+
+  const size = "48"
+  const height = "48"
+  const width = "48"
 </script>
 
 ## Lessons learned from open sourcing the Orbit docs
@@ -91,7 +95,12 @@ Oh, and it was recently put on a list of the [best design system documentation s
 
 To help think about what is important in documenting design systems, it helps to think about what Orbit would be without documentation.
 
-<div style="display: flex; justify-content: center; gap:0.25em;"><Icon data={faFigma} scale={3} label="Figma" /> <Icon data={faReact} scale={3} label="React" /> <Icon data={apple} scale={3} label="iOS" /> <Icon data={android} scale={3} label="Android" /></div>
+<div style="display: flex; justify-content: center; gap:0.25em;">
+  <svg  {height} {width} viewBox={`0 0 ${faFigma.icon[0]} ${faFigma.icon[1]}`}><path d={faFigma.icon[4]} /></svg>
+  <React {size} {height} {width} />
+  <Apple {size} {height} {width} />
+  <Android {size} {height} {width} />
+</div>
 
 Design systems often start as a component library/UI kit.
 Orbit without any docs would have component libraries for various platforms.
