@@ -38,6 +38,7 @@
     id="Dark mode toggle"
     on:click={() => toggleDarkMode()}
     class="w-16 h-10 ml-2 bg-green-100 rounded-3xl p-1 dark:text-gray-700"
+    data-testid="dark-mode-toggle"
   >
     <div
       class={`bg-white rounded-1/2 h-8 w-8 p-1 relative transition-left duration-500 ${

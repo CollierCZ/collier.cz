@@ -10,6 +10,9 @@ const config = {
       },
     ],
   },
+  transformIgnorePatterns: [
+    "node_modules/(?!svelte-material-icons)"
+  ],
   moduleFileExtensions: ['ts', 'js', 'svelte'],
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   moduleNameMapper: {

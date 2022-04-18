@@ -6,7 +6,7 @@
   import HomeHero from '$lib/components/HomeHero.svelte'
 </script>
 
-<div class={$darkMode ? 'dark' : ''} data-test-id="app-container">
+<div class={$darkMode ? 'dark' : ''}>
   <div class="h-full min-h-screen dark:bg-dark-500 dark:text-white">
     <Header />
 
