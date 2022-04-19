@@ -59,7 +59,7 @@
     aria-label="Dark mode"
     id="Dark mode toggle"
     on:click={() => toggleDarkMode()}
-    class="w-16 h-10 ml-2 bg-green-100 rounded-3xl p-1 dark:text-gray-700"
+    class="w-16 min-w-16 h-10 ml-2 bg-green-100 rounded-3xl p-1 dark:text-gray-700"
     data-testid="dark-mode-toggle"
   >
     <div
