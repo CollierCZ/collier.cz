@@ -1,6 +1,8 @@
 import { browser } from '$app/env';
 import { writable } from 'svelte/store';
 
+const defaultValue = null;
+
 const getOsPreference = () => {
   // Check if system stores preference
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -9,8 +11,6 @@ const getOsPreference = () => {
   // If no OS preference set
   return null
 }
-
-const defaultValue = null;
 
 export const getStoredValue = () => {
   if (browser) {
@@ -34,6 +34,26 @@ export const getStoredValue = () => {
 
 export const darkMode = writable<boolean | null>(getStoredValue());
 
+darkMode.subscribe((value) => {
+  if (browser) {
+    // If OS prefs not set, set mode based on value
+    if (!getOsPreference()) {
+      const classes = document.documentElement.classList
+      if (value) {
+        if (!classes.contains('dark')) {
+          classes.add('dark')
+        }
+      } else {
+        if (classes.contains('dark')) {
+          classes.remove('dark')
+        }
+      }
+    }
+  }
+});
+
+export default darkMode;
+
 const checkForPreference = () => {
   if (browser) {
     if (localStorage.getItem('darkMode')) return true
@@ -44,10 +64,12 @@ const checkForPreference = () => {
 
 export const isPreferenceSet = writable<boolean>(checkForPreference());
 
-darkMode.subscribe((value) => {
-  if (browser && value !== null) {
-    window.localStorage.setItem('darkMode', String(value));
+isPreferenceSet.subscribe((value) => {
+  if (browser) {
+    // reset things when cleared
+    if (!value) {
+      localStorage.removeItem('darkMode')
+      darkMode.set(getStoredValue())
+    }
   }
-});
-
-export default darkMode;
+})

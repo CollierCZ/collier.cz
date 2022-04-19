@@ -1,16 +1,13 @@
 <script lang="ts">
   import { browser } from '$app/env'
-  import darkMode, {
-    getStoredValue,
-    isPreferenceSet,
-  } from '$lib/stores/darkMode'
+  import darkMode, { isPreferenceSet } from '$lib/stores/darkMode'
+
   const toggleDarkMode = () => {
+    localStorage.setItem('darkMode', String(!$darkMode))
     darkMode.set(!$darkMode)
     isPreferenceSet.set(true)
   }
   const resetDarkMode = () => {
-    localStorage.removeItem('darkMode')
-    darkMode.set(getStoredValue())
     isPreferenceSet.set(false)
   }
 
@@ -20,6 +17,31 @@
   let height = '100%'
   let width = height
 </script>
+
+<svelte:head>
+  <script>
+    if (document) {
+      const setToDark = () => {
+        // Get classes for dark mode holder
+        const classes = document.documentElement.classList
+        if (!classes.contains('dark')) {
+          classes.add('dark')
+        }
+      }
+      const prefs = localStorage.getItem('darkMode')
+      // If preference set through local storage
+      if (prefs === 'true') {
+        setToDark()
+      } else if (
+        // If no stored preferences, look at OS
+        !prefs &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        setToDark()
+      }
+    }
+  </script>
+</svelte:head>
 
 <div class="flex justify-end align-middle">
   {#if browser}

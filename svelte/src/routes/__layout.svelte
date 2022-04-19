@@ -1,12 +1,11 @@
 <script lang="ts">
-  import darkMode from '$lib/stores/darkMode'
   import Header from '$lib/components/Header.svelte'
   import 'virtual:windi.css'
   import { page } from '$app/stores'
   import HomeHero from '$lib/components/HomeHero.svelte'
 </script>
 
-<div class={$darkMode ? 'dark' : ''}>
+<div>
   <div class="h-full min-h-screen dark:bg-dark-500 dark:text-white">
     <Header />
 

@@ -12,3 +12,6 @@ node_modules
 # Formatted images
 static/formatted-images
 formatImages.cjs
+
+# Test coverate
+coverage
