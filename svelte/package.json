@@ -36,7 +36,6 @@
     "prettier-plugin-svelte": "^2.6.0",
     "shiki": "^0.10.1",
     "svelte": "^3.46.6",
-    "svelte-awesome": "^2.4.6",
     "svelte-check": "^2.4.6",
     "svelte-jester": "^2.3.2",
     "svelte-media": "^0.1.5",
@@ -50,6 +49,7 @@
   "dependencies": {
     "@fontsource/fira-mono": "^4.5.7",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
-    "sharp": "^0.30.3"
+    "sharp": "^0.30.3",
+    "svelte-material-icons": "^2.0.2"
   }
 }
