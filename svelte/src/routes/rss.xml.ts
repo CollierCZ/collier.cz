@@ -24,12 +24,13 @@ export async function get(): Promise<RssObject> {
 }
 
 const xmlify = (articles: ArticleMetadata[]) => `
-  <rss version="2.0">
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
       <title>Feed for collier.cz</title>
       <description>Educator, editor, elucidator</description>
+      <atom:link href="https://collier.cz/rss.xml" rel="self" type="application/rss+xml" />
       <link>https://collier.cz</link>
-      <lastBuildDate>${new Date().toString()}</lastBuildDate>
+      <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
       ${articles
         .map(
           (article) => `
@@ -40,7 +41,7 @@ const xmlify = (articles: ArticleMetadata[]) => `
         <guid>https://collier.cz/articles/${article.slug}</guid>
         <category>${article.category}</category>
         ${article.tags.map((tag) => `<category>${tag}</category>`).join('')}
-        <pubDate>${new Date(article.published).toString()}</pubDate>
+        <pubDate>${new Date(article.published).toUTCString()}</pubDate>
         </item>
       `,
         )
