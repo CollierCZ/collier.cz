@@ -40,6 +40,12 @@
     title="Sitemap"
     href="../sitemap.xml"
   />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="feed one"
+    href="/rss.xml"
+  />
 </svelte:head>
 
 <Seo
