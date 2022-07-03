@@ -1,13 +1,12 @@
 import { resolve } from 'path';
 import { defineConfig } from 'vite';
+import multiInput from 'rollup-plugin-multi-input';
 
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'slides/documenting-design-system.html')
-      }
+      input: ['index.html','slides/*'],
+      plugins: [multiInput()]
     }
   }
 })
