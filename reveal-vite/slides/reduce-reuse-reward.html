@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Reduce, reuse, reward</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+          data-separator-vertical="^\n\n">
+          <textarea data-template>
+            ## Reduce, reuse, reward
+            ### How not to repeat yourself in your docs
+
+            Aaron Collier  
+            Technical Education Manager  
+            Platform.sh
+            ---
+            ## About me
+
+            ![A map of where I've been](/map.png)
+            ---
+            ## Platform.sh docs
+
+            ![Overview of Platform.sh docs](/psh-docs-intro.png)
+
+            Note:
+            * Platform as a Service
+            * Docs completely open source
+            * Build on Hugo
+            * Have a lot of content
+            ---
+            ## What it's about
+
+            * Content reuse
+            * Single sourcing
+            * Transclusion
+
+            Note:
+            * Some names for the same thing
+            * We have lots of content
+            * Reuse it
+            * Also know as creating a single source of truth
+            * Transclusion is the inclusion of files within other files
+            ---
+            ## Content reuse
+
+            * Avoid repetition
+            * Update once, correct everywhere
+            * Helps with automation
+            * Same content, different outputs
+
+            Note:
+            * Helps you avoid repetition
+            * Reduces the need to make multiple updates
+            * Can have automation update one source and publish that elsewhere
+            * Maybe want PDFs with different variable names
+            ---
+            ## Examples
+
+            * Updating a product name
+            * Installation instructions
+            * Intro to different integrations
+
+            Note:
+            * Some examples where this could come in handy
+            * A product name changing and existing on many pages
+            * Instructions in getting started and a specific page
+            * We have guides for lots of different frameworks and they share introductory and other content
+            ---
+            ## Example repetition
+
+            ```markdown
+            To get the most out of your Task Manager,
+            integrate it with Project X.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            ```markdown
+            To get the most out of your Calendar,
+            integrate it with Project X.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            Note:
+            * You might have similar instructions in two places
+            * You repeat your product name and how to use it
+            ---
+            ## Resolve project name
+
+            ```markdown
+            To get the most out of your Task Manager,
+            integrate it with {{% product-x %}}.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            ```markdown
+            To get the most out of your Calendar,
+            integrate it with {{% product-x %}}.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            Note:
+            * You might have similar instructions in two places
+            * You repeat your product name and how to use it
+            ---
+            ## Thank you
+
+            Aaron Collier  
+            [collier.cz](https://collier.cz/)  
+            [aaron@collier.cz](mailto:aaron@collier.cz)
+          </textarea>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
