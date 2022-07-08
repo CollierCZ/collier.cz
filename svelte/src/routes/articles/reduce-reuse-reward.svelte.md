@@ -1,6 +1,6 @@
 ---
-title: 'Reduce, reuse, reward: How not to repeat yourself in your docs'
-description: How I learned to reuse content in a docs-as-code workflow in Hugo.
+title: Reduce, reuse, reward
+description: How not to repeat yourself in your docs in Hugo.
 heroImage: recycle
 published: 2022-07-08
 category: technology
@@ -9,7 +9,7 @@ tags:
   - content
 ---
 
-I've written before about [reusing content](/articles/reusing-content-with-variables-in-mdx/).
+I've written before about [reusing content](https://collier.cz/articles/reusing-content-with-variables-in-mdx/).
 Since then, I've changed jobs and also documentation tools.
 
 I'm now the Technical Education Manager at [Platform.sh](https://platform.sh/).
@@ -77,9 +77,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 And one for integrating with a Calendar:
@@ -92,9 +92,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 The instructions are basically the same in two places.
@@ -123,9 +123,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 And the Calendar file:
@@ -138,9 +138,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 If you were using HTML, you'd replace the `%`s with `<` and `>`.
@@ -162,9 +162,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 Then use the shortcode while passing the name of the integration as a parameter:
@@ -193,10 +193,10 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project
-    {{if eq $integration "Task Manager"}}start{{else}}go{{end}}`.
+    project
+    {{if eq $integration "Task Manager"}}start{{else}}go{{end}}.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 Note that you don't have to change either of the other files.
@@ -220,9 +220,9 @@ This makes it faster, cleaner, and smarter.
 To do so, follow these steps:
 
 1. Set up your directory with the following command:
-    `project start`.
+    project start.
 2. Answer the questions.
-3. Build it all by running `project build`.
+3. Build it all by running project build.
 ```
 
 This adds complexity to your process.
