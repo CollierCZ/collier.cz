@@ -1,6 +1,7 @@
 Atticus
 documentarian
 Figma
+Gasparyan
 Genaev
 Kentico
 knowns
@@ -8,8 +9,11 @@ Kontent
 Matija
 mdsvex
 Netlify
+rebranding
 Seitler
+shortcode
 Spotify
 Temkin
-transclusion
+transclude
+[Tt]ransclusion
 Vite
