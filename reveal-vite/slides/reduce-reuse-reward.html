@@ -33,7 +33,14 @@
             * Build on Hugo
             * Have a lot of content
             ---
-            ## What it's about
+            ## What it's all About
+
+            * Why reuse
+            * How to reuse
+            * What to be careful of
+
+            ---
+            ## What it's called
 
             * Content reuse
             * Single sourcing
@@ -46,9 +53,9 @@
             * Also know as creating a single source of truth
             * Transclusion is the inclusion of files within other files
             ---
-            ## Content reuse
+            ## Benefits to reuse
 
-            * Avoid repetition
+            * Avoid repetition (DRY principle)
             * Update once, correct everywhere
             * Helps with automation
             * Same content, different outputs
@@ -63,7 +70,7 @@
 
             * Updating a product name
             * Installation instructions
-            * Intro to different integrations
+            * Introduction to different integrations
 
             Note:
             * Some examples where this could come in handy
@@ -105,9 +112,22 @@
             ---
             ## Resolve project name
 
+            Create a `layouts/shortcodes/product-name.md` file:
+
+            ```markdown
+            Project X
+            ```
+
+            Note:
+            * Then you can resolve the name in a short code.
+            * When you change it here, it changes in every place
+            * Could also use HTML
+            ---
+            ## Use the shortcode
+
             ```markdown
             To get the most out of your Task Manager,
-            integrate it with {{% product-x %}}.
+            integrate it with {{% product-name %}}.
             This makes it faster, cleaner, and smarter.
 
             To do so, follow these steps:
@@ -120,7 +140,32 @@
 
             ```markdown
             To get the most out of your Calendar,
-            integrate it with {{% product-x %}}.
+            integrate it with {{% product-name %}}.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+            ---
+            ## Reuse instructions
+
+            ```markdown
+            {{% setup-instructions integration="Task Manager"%}}
+            ```
+
+            ```markdown
+            {{% setup-instructions integration="Calendar"%}}
+            ```
+
+            Create a `layouts/shortcodes/setup-instructions.md` file:
+            ```markdown
+            {{ $integration = .Get "integration"}}
+            To get the most out of your {{ $integration }},
+            integrate it with {{% product-name %}}.
             This makes it faster, cleaner, and smarter.
 
             To do so, follow these steps:
@@ -132,8 +177,100 @@
             ```
 
             Note:
-            * You might have similar instructions in two places
-            * You repeat your product name and how to use it
+            * It's possible to put it into a shortcode
+            * Use a named property to vary part of the content
+            ---
+            ## Vary instructions
+
+            ```markdown
+            {{ $integration = .Get "integration"}}
+            To get the most out of your {{ $integration }},
+            integrate it with {{% product-name %}}.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project
+               {{if eq $integration "Task Manager"}}start{{else}}go{{end}}`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            Note:
+            * It's possible to put it into a shortcode
+            * Use a named property to vary part of the content
+            ---
+            ## Nested shortcodes
+
+            One issue is you can't use shortcodes inside other shortcodes.
+
+            Make the nested shortcode into a partial.
+            Then your top-level shortcode could look like:
+            ```markdown
+            {{ $integration = .Get "integration"}}
+            To get the most out of your {{ $integration }},
+            integrate it with
+            {{ partial "product-name" (dict "integration" $integration) }}.
+            This makes it faster, cleaner, and smarter.
+
+            To do so, follow these steps:
+
+            1. Set up your directory with the following command:
+               `project start`.
+            2. Answer the questions.
+            3. Build it all by running `project build`.
+            ```
+
+            Note:
+            * Can create partials to have nesting
+            * This adds complexity
+            * Makes it harder to update
+            ---
+            ## Sustainable organization
+
+            If you have a lot of reused content, can be difficult to organize.
+            Especially if you have other shortcodes for actual layouts and such.
+
+            Can create a shortcode to transclude markdown files from a special directory just for them.
+            Can have separate files inside this.
+
+            ---
+            ## Example `include` shortcode
+
+            If your directory for the files was `snippets`,
+            your shortcode could look like this:
+            ```markdown
+            {{ $file := .Get 0 }}
+            {{ printf "snippets/%s" $file | readFile | safeHTML }}
+            ```
+
+            And you could invoke it like this (assuming the file to include is `example.md` in the `snippets` directory):
+            ```markdown
+            {{% include "example.md" %}}
+            ```
+
+            Note:
+            * safeHTML ensures headings are included in Table of Contents
+            ---
+            ## Drawbacks
+
+            * Doesn't process Hugo formatting (no variables or partials)
+            * If outside content directory, updates don't refresh site
+
+            So suitable for basic markdown that's repeated, but not complex scenarios.
+            ---
+            ## Things to watch out for
+
+            Anna Gasparyan – [Don't shoot yourself in the foot with content reuse](https://www.youtube.com/watch?v=dxEhvjz3eEY)
+
+            * Content reused when unnecessary
+            * Hard to find where to update (especially nested)
+            * Complex nesting can break
+            * Reused content can hurt search results
+
+            Just because you _can_ reuse content doesn't mean you _should_.
+            DRY versus KISS principles.
             ---
             ## Thank you
 
