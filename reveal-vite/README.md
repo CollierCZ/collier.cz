@@ -6,6 +6,20 @@ It also uses [TypeScript](https://www.typescriptlang.org/).
 The presentations can even be written in Markdown.
 Use `---` to separate slides and `Note:` to mark sections for speaker notes.
 
+## Run it
+
+To create a development environment that reloads on page changes, run the following command:
+
+```bash
+npm run dev
+```
+
+To create a production-ready build, run the following command:
+
+```bash
+npm run build
+```
+
 ## Add a new presentation
 
 To add a new presentation, add a new HTML file in the `slides` directory copying an existing file.

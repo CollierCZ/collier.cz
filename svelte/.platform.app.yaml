@@ -2,7 +2,7 @@
 name: svelte
 
 # The type key specifies the language and version for your application.
-type: 'nodejs:16'
+type: 'nodejs:14'
 
 # The hooks that will be triggered when the package is deployed.
 hooks:
