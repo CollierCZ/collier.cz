@@ -9,6 +9,7 @@ Kontent
 Matija
 mdsvex
 Netlify
+rebase
 rebranding
 Seitler
 shortcode
