@@ -1,6 +1,6 @@
 ---
 title: Slashes in Git commands
-description: What the slashes mean in branches for Git commands and some commands have them and some don't.
+description: What the slashes mean in branches for Git commands and why some commands have them and some don't.
 heroImage: slash
 published: 2022-09-14
 category: technology
